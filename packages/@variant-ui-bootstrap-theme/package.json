@@ -1,0 +1,6 @@
+{
+  "name": "@variant-ui/bootstrap-theme",
+  "packagemanager": "pnpm@9.12.1",
+  "type": "module",
+  "main": "dist/index.js"
+}

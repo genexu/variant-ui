@@ -1,0 +1,6 @@
+{
+  "name": "@variant-ui/styled-system",
+  "packagemanager": "pnpm@9.12.1",
+  "type": "module",
+  "main": "dist/index.js"
+}
