@@ -2,5 +2,17 @@
   "name": "@variant-ui/material-theme",
   "packagemanager": "pnpm@9.12.1",
   "type": "module",
-  "main": "dist/index.js"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b && vite build"
+  },
+  "dependencies": {
+    "@variant-ui/styled-system": "link:../@variant-ui-styled-system"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4",
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.4"
+  }
 }

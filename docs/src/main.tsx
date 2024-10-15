@@ -1,9 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { HelloWorld } from '@variant-ui/react'
+import App from './App'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HelloWorld name="Tester" />
+    <App />
   </StrictMode>,
 )

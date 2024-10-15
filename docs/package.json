@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@variant-ui/material-theme": "link:../packages/@variant-ui-material-theme",
     "@variant-ui/react": "link:../packages/@variant-ui-react",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
