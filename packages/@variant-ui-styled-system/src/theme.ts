@@ -7,4 +7,3 @@ export type TBasicTheme = {
 export type TTheme = {
   colors: TColors;
 };
-
