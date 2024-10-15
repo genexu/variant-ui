@@ -2,13 +2,13 @@ import { transformBasicPaletteToPalette } from '@variant-ui/styled-system';
 import type { TTheme } from '@variant-ui/styled-system';
 
 const palette = transformBasicPaletteToPalette({
-  red: "#F44336",
-  purple: "#9C27B0",
-  blue: "#2196F3",
-  green: "#4CAF50",
-  yellow: "#FFEB3B",
-  orange: "#FF9800",
-  gray: "#9E9E9E"
+  red: '#F44336',
+  purple: '#9C27B0',
+  blue: '#2196F3',
+  green: '#4CAF50',
+  yellow: '#FFEB3B',
+  orange: '#FF9800',
+  gray: '#9E9E9E',
 });
 
 const colors = {
@@ -22,9 +22,7 @@ const colors = {
 };
 
 const theme: TTheme = {
-  colors
-}; 
-
+  colors,
+};
 
 export default theme;
-
