@@ -1,5 +1,5 @@
-export type THelloWorldProps = { name?: string };
-export type THelloWorld = (props: THelloWorldProps) => JSX.Element;
+type THelloWorldProps = { name?: string };
+type THelloWorld = (props: THelloWorldProps) => JSX.Element;
 
 export const HelloWorld: THelloWorld = ({
   name = 'World',

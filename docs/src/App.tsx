@@ -17,11 +17,11 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <HelloWorld name="Tester" />
       <select name="theme" onChange={(e) => setTheme(themes[e.target.value])}>
         <option value="material">Material</option>
         <option value="bootstrap">Bootstrap</option>
       </select>
-      <HelloWorld name="Tester" />
       <ColorSection />
     </ThemeProvider>
   );

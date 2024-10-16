@@ -1,20 +1,29 @@
-import { useTheme } from '@variant-ui/react';
+import { Box, useTheme } from '@variant-ui/react';
 import type { TPaletteColor } from '@variant-ui/styled-system';
 
-const ColorBlock = ({ color, name }: { color: string; name?: string }) => (
-  <div>
-    <p>{name}</p>
-    <div
-      style={{
-        width: '100px',
-        height: '100px',
-        backgroundColor: color,
-      }}
-    />
-  </div>
-);
+type TColorBlock = {
+  w: number;
+  h: number;
+  color: string;
+  name?: string;
+};
 
-const ColorScale = ({ color }: { color: TPaletteColor }) => {
+const ColorBlock = ({ w, h, color, name }: TColorBlock) => {
+  if (!name) return <Box width={w} height={h} bgColor={color} />;
+
+  return (
+    <Box>
+      <p>{name}</p>
+      <Box width={w} height={h} bgColor={color} />
+    </Box>
+  );
+};
+
+type TColorScale = {
+  color: TPaletteColor;
+};
+
+const ColorScale = ({ color }: TColorScale) => {
   const theme = useTheme();
   if (!theme) return null;
 
@@ -22,14 +31,14 @@ const ColorScale = ({ color }: { color: TPaletteColor }) => {
   const palette = theme.colors.palette[color];
 
   return (
-    <>
+    <Box>
       <p>{color}</p>
-      <div style={{ display: 'flex' }}>
+      <Box display="flex" flexDirection="column">
         {index.map((i) => (
-          <ColorBlock key={i} color={palette[i]} />
+          <ColorBlock key={i} w={100} h={50} color={palette[i]} />
         ))}
-      </div>
-    </>
+      </Box>
+    </Box>
   );
 };
 
@@ -41,17 +50,22 @@ const ColorSection = () => {
 
   return (
     <>
-      <div style={{ display: 'flex' }}>
-        <ColorBlock color={colors.primary} name="primary" />
-        <ColorBlock color={colors.secondary} name="secondary" />
-        <ColorBlock color={colors.success} name="success" />
-        <ColorBlock color={colors.error} name="error" />
-        <ColorBlock color={colors.warning} name="warning" />
-        <ColorBlock color={colors.info} name="info" />
-      </div>
-      {Object.keys(colors.palette).map((color) => (
-        <ColorScale key={color} color={color as keyof typeof colors.palette} />
-      ))}
+      <Box display="flex">
+        <ColorBlock name="primary" w={100} h={100} color={colors.primary} />
+        <ColorBlock name="secondary" w={100} h={100} color={colors.secondary} />
+        <ColorBlock name="success" w={100} h={100} color={colors.success} />
+        <ColorBlock name="error" w={100} h={100} color={colors.error} />
+        <ColorBlock name="warning" w={100} h={100} color={colors.warning} />
+        <ColorBlock name="info" w={100} h={100} color={colors.info} />
+      </Box>
+      <Box display="flex">
+        {Object.keys(colors.palette).map((color) => (
+          <ColorScale
+            key={color}
+            color={color as keyof typeof colors.palette}
+          />
+        ))}
+      </Box>
     </>
   );
 };

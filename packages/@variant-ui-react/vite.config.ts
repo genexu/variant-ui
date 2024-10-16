@@ -19,7 +19,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react'],
+      external: ['react', '@emotion/styled', '@emotion/is-prop-valid'],
     },
     watch: {
       include: ['src/**'],
