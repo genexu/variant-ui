@@ -10,6 +10,9 @@ importers:
 
   docs:
     dependencies:
+      '@variant-ui/bootstrap-theme':
+        specifier: link:../packages/@variant-ui-bootstrap-theme
+        version: link:../packages/@variant-ui-bootstrap-theme
       '@variant-ui/material-theme':
         specifier: link:../packages/@variant-ui-material-theme
         version: link:../packages/@variant-ui-material-theme
@@ -63,7 +66,21 @@ importers:
         specifier: ^5.4.8
         version: 5.4.8(@types/node@22.7.5)
 
-  packages/@variant-ui-bootstrap-theme: {}
+  packages/@variant-ui-bootstrap-theme:
+    dependencies:
+      '@variant-ui/styled-system':
+        specifier: link:../@variant-ui-styled-system
+        version: link:../@variant-ui-styled-system
+    devDependencies:
+      typescript:
+        specifier: 5.5.4
+        version: 5.5.4
+      vite:
+        specifier: ^5.4.8
+        version: 5.4.8(@types/node@22.7.5)
+      vite-plugin-dts:
+        specifier: ^4.2.4
+        version: 4.2.4(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.5.4)(vite@5.4.8(@types/node@22.7.5))
 
   packages/@variant-ui-material-theme:
     dependencies:

@@ -1,5 +1,10 @@
 import { HelloWorld } from '@variant-ui/react';
-import theme from '@variant-ui/material-theme';
+import materialTheme from '@variant-ui/material-theme';
+import bootstrapTheme from '@variant-ui/bootstrap-theme';
+
+console.log(bootstrapTheme);
+console.log(materialTheme);
+const theme = bootstrapTheme;
 
 const ColorBlock = ({ color, name }: { color: string; name?: string }) => (
   <div>
