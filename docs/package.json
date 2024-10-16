@@ -12,6 +12,7 @@
     "@variant-ui/bootstrap-theme": "link:../packages/@variant-ui-bootstrap-theme",
     "@variant-ui/material-theme": "link:../packages/@variant-ui-material-theme",
     "@variant-ui/react": "link:../packages/@variant-ui-react",
+    "@variant-ui/styled-system": "link:../packages/@variant-ui-styled-system",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

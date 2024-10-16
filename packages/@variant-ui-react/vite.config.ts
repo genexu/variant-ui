@@ -18,6 +18,9 @@ export default defineConfig({
       formats: ['es'],
       fileName: 'index',
     },
+    rollupOptions: {
+      external: ['react'],
+    },
     watch: {
       include: ['src/**'],
     },

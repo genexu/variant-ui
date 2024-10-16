@@ -19,6 +19,9 @@ importers:
       '@variant-ui/react':
         specifier: link:../packages/@variant-ui-react
         version: link:../packages/@variant-ui-react
+      '@variant-ui/styled-system':
+        specifier: link:../packages/@variant-ui-styled-system
+        version: link:../packages/@variant-ui-styled-system
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -121,6 +124,9 @@ importers:
 
   packages/@variant-ui-react:
     dependencies:
+      '@variant-ui/styled-system':
+        specifier: link:../@variant-ui-styled-system
+        version: link:../@variant-ui-styled-system
       react:
         specifier: ^18.3.1
         version: 18.3.1

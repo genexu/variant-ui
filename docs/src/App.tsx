@@ -1,62 +1,29 @@
-import { HelloWorld } from '@variant-ui/react';
+import { useState } from 'react';
+import { HelloWorld, ThemeProvider } from '@variant-ui/react';
 import materialTheme from '@variant-ui/material-theme';
 import bootstrapTheme from '@variant-ui/bootstrap-theme';
-
-console.log(bootstrapTheme);
-console.log(materialTheme);
-const theme = bootstrapTheme;
-
-const ColorBlock = ({ color, name }: { color: string; name?: string }) => (
-  <div>
-    <p>{name}</p>
-    <div
-      style={{
-        width: '100px',
-        height: '100px',
-        backgroundColor: color,
-      }}
-    />
-  </div>
-);
-
-const ColorScale = ({
-  color,
-}: {
-  color: keyof typeof theme.colors.palette;
-}) => {
-  const index = [100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
-  const palette = theme.colors.palette[color];
-
-  return (
-    <>
-      <p>{color}</p>
-      <div style={{ display: 'flex' }}>
-        {index.map((i) => (
-          <ColorBlock key={i} color={palette[i]} />
-        ))}
-      </div>
-    </>
-  );
-};
+import ColorSection from './ColorSection';
+import type { TTheme } from '@variant-ui/styled-system';
 
 const App = () => {
-  const colors = theme.colors;
+  const [theme, setTheme] = useState<TTheme>(materialTheme);
+
+  const themes = {
+    material: materialTheme,
+    bootstrap: bootstrapTheme,
+  } as {
+    [key: string]: TTheme;
+  };
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <select name="theme" onChange={(e) => setTheme(themes[e.target.value])}>
+        <option value="material">Material</option>
+        <option value="bootstrap">Bootstrap</option>
+      </select>
       <HelloWorld name="Tester" />
-      <div style={{ display: 'flex' }}>
-        <ColorBlock color={colors.primary} name="primary" />
-        <ColorBlock color={colors.secondary} name="secondary" />
-        <ColorBlock color={colors.success} name="success" />
-        <ColorBlock color={colors.error} name="error" />
-        <ColorBlock color={colors.warning} name="warning" />
-        <ColorBlock color={colors.info} name="info" />
-      </div>
-      {Object.keys(colors.palette).map((color) => (
-        <ColorScale key={color} color={color as keyof typeof colors.palette} />
-      ))}
-    </>
+      <ColorSection />
+    </ThemeProvider>
   );
 };
 
