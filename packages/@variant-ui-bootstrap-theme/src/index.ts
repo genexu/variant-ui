@@ -1,11 +1,14 @@
-import { transformBasicPaletteToPalette } from "@variant-ui/styled-system";
+import { createPalette, createTheme } from "@variant-ui/styled-system";
 import type {
+  TColorBase,
+  TPaletteBase,
+  TThemeBase,
   TTheme,
   TTypographyVariant,
   TTypographtStyle,
 } from "@variant-ui/styled-system";
 
-const palette = transformBasicPaletteToPalette({
+const paletteBase: TPaletteBase = {
   red: "#dc3545",
   purple: "#6f42c1",
   blue: "#0d6efd",
@@ -13,16 +16,20 @@ const palette = transformBasicPaletteToPalette({
   yellow: "#ffc107",
   orange: "#fd7e14",
   gray: "#9E9E9E",
-});
+};
 
-const colors = {
+const palette = createPalette(paletteBase);
+
+const colors: TColorBase = {
   primary: palette.blue[500],
   secondary: palette.gray[600],
   success: palette.green[500],
   error: palette.red[500],
   warning: palette.yellow[500],
   info: palette.blue[500],
-  palette,
+  white: "#FFFFFF",
+  black: "#121212",
+  palette: paletteBase,
 };
 
 const fontWeightMedium = 500;
@@ -31,7 +38,7 @@ const fontWeightRegular = 400;
 const baseFontSize = 1; // rem
 const baseLineHeight = 1.2; // rem
 
-const typography = {
+const typography: Record<TTypographyVariant, TTypographtStyle> = {
   h1: {
     fontSize: `${baseFontSize * 2.5}rem`,
     lineHeight: `${baseLineHeight}rem`,
@@ -80,11 +87,13 @@ const typography = {
     fontWeight: fontWeightRegular,
     fontStyle: "normal",
   },
-} as Record<TTypographyVariant, TTypographtStyle>;
+};
 
-const theme: TTheme = {
+const themeBase: TThemeBase = {
   colors,
   typography,
 };
+
+const theme: TTheme = createTheme(themeBase);
 
 export default theme;

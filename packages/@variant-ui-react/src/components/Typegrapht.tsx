@@ -36,7 +36,7 @@ const TypographyBase: TTypographtBase = styled('span', {
 
 type TTypographyProps = {
   variant?: TTypographyVariant;
-  color?: string;
+  color?: string | null;
   children: ReactNode;
 } & TFontStyleProps;
 
@@ -44,14 +44,22 @@ type TTypographyComponent = FC<TTypographyProps>;
 
 export const Typography: TTypographyComponent = ({
   variant = 'p',
+  color = null,
   children,
   ...props
 }: TTypographyProps) => {
   const theme = useTheme();
   if (!theme) return null;
 
+  if (!color) color = theme.colors.black;
+
   return (
-    <TypographyBase as={variant} {...theme.typography[variant]} {...props}>
+    <TypographyBase
+      as={variant}
+      color={color}
+      {...theme.typography[variant]}
+      {...props}
+    >
       {children}
     </TypographyBase>
   );

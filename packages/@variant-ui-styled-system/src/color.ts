@@ -6,7 +6,9 @@ export type TColor =
   | 'success'
   | 'error'
   | 'warning'
-  | 'info';
+  | 'info'
+  | 'white'
+  | 'black';
 
 export type TPaletteColor =
   | 'red'
@@ -19,14 +21,14 @@ export type TPaletteColor =
 
 export type TPaletteScale = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
-export type TBasicPalette = {
+export type TPaletteBase = {
   [key in TPaletteColor]: string;
 };
 
-export type TBasicColors = {
+export type TColorBase = {
   [key in TColor]: string;
 } & {
-  palette: TBasicPalette;
+  palette: TPaletteBase;
 };
 
 export type TPaletteScaleColors = {
@@ -53,20 +55,18 @@ const paletteColors: Array<TPaletteColor> = [
   'gray',
 ] as const;
 
-export const transformBasicPaletteToPalette = (
-  basicPalette: TBasicPalette,
-): TPalette => {
+export const createPalette = (base: TPaletteBase): TPalette => {
   return paletteColors.reduce<TPalette>((acc, color) => {
     acc[color] = {
-      100: lighten(0.4, basicPalette[color]),
-      200: lighten(0.3, basicPalette[color]),
-      300: lighten(0.2, basicPalette[color]),
-      400: lighten(0.1, basicPalette[color]),
-      500: basicPalette[color],
-      600: darken(0.1, basicPalette[color]),
-      700: darken(0.2, basicPalette[color]),
-      800: darken(0.3, basicPalette[color]),
-      900: darken(0.4, basicPalette[color]),
+      100: lighten(0.4, base[color]),
+      200: lighten(0.3, base[color]),
+      300: lighten(0.2, base[color]),
+      400: lighten(0.1, base[color]),
+      500: base[color],
+      600: darken(0.1, base[color]),
+      700: darken(0.2, base[color]),
+      800: darken(0.3, base[color]),
+      900: darken(0.4, base[color]),
     };
     return acc;
   }, {} as TPalette);
