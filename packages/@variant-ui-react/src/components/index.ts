@@ -1,2 +1,2 @@
-export { HelloWorld } from './HelloWorld';
 export { Box } from './Box';
+export { Typography } from './Typegrapht';

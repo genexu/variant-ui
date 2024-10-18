@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { HelloWorld, ThemeProvider } from '@variant-ui/react';
+import { Typography, ThemeProvider } from '@variant-ui/react';
 import materialTheme from '@variant-ui/material-theme';
 import bootstrapTheme from '@variant-ui/bootstrap-theme';
 import ColorSection from './ColorSection';
@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <HelloWorld name="Tester" />
+      <Typography variant="h3">Variant UI</Typography>
       <select name="theme" onChange={(e) => setTheme(themes[e.target.value])}>
         <option value="material">Material</option>
         <option value="bootstrap">Bootstrap</option>

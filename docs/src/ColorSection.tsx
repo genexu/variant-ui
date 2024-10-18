@@ -1,4 +1,4 @@
-import { Box, useTheme } from '@variant-ui/react';
+import { Box, Typography, useTheme } from '@variant-ui/react';
 import type { TPaletteColor } from '@variant-ui/styled-system';
 
 type TColorBlock = {
@@ -13,7 +13,7 @@ const ColorBlock = ({ w, h, color, name }: TColorBlock) => {
 
   return (
     <Box>
-      <p>{name}</p>
+      <Typography variant="h6">{name}</Typography>
       <Box width={w} height={h} bgColor={color} />
     </Box>
   );
@@ -32,7 +32,7 @@ const ColorScale = ({ color }: TColorScale) => {
 
   return (
     <Box>
-      <p>{color}</p>
+      <Typography variant="h6">{color}</Typography>
       <Box display="flex" flexDirection="column">
         {index.map((i) => (
           <ColorBlock key={i} w={100} h={50} color={palette[i]} />
@@ -50,6 +50,7 @@ const ColorSection = () => {
 
   return (
     <>
+      <Typography variant="h4">Color Palette</Typography>
       <Box display="flex">
         <ColorBlock name="primary" w={100} h={100} color={colors.primary} />
         <ColorBlock name="secondary" w={100} h={100} color={colors.secondary} />
