@@ -1,4 +1,4 @@
-import { createPalette, createTheme } from "@variant-ui/styled-system";
+import { createPalette, createTheme } from '@variant-ui/styled-system';
 import type {
   TColorBase,
   TPaletteBase,
@@ -6,16 +6,16 @@ import type {
   TTheme,
   TTypographyVariant,
   TTypographtStyle,
-} from "@variant-ui/styled-system";
+} from '@variant-ui/styled-system';
 
 const paletteBase: TPaletteBase = {
-  red: "#dc3545",
-  purple: "#6f42c1",
-  blue: "#0d6efd",
-  green: "#198754",
-  yellow: "#ffc107",
-  orange: "#fd7e14",
-  gray: "#9E9E9E",
+  red: '#dc3545',
+  purple: '#6f42c1',
+  blue: '#0d6efd',
+  green: '#198754',
+  yellow: '#ffc107',
+  orange: '#fd7e14',
+  gray: '#9E9E9E',
 };
 
 const palette = createPalette(paletteBase);
@@ -27,8 +27,8 @@ const colors: TColorBase = {
   error: palette.red[500],
   warning: palette.yellow[500],
   info: palette.blue[500],
-  white: "#FFFFFF",
-  black: "#121212",
+  white: '#FFFFFF',
+  black: '#121212',
   palette: paletteBase,
 };
 
@@ -43,49 +43,49 @@ const typography: Record<TTypographyVariant, TTypographtStyle> = {
     fontSize: `${baseFontSize * 2.5}rem`,
     lineHeight: `${baseLineHeight}rem`,
     fontWeight: fontWeightMedium,
-    fontStyle: "normal",
+    fontStyle: 'normal',
   } as TTypographtStyle,
   h2: {
     fontSize: `${baseFontSize * 2}rem`,
     lineHeight: `${baseLineHeight}rem`,
     fontWeight: fontWeightMedium,
-    fontStyle: "normal",
+    fontStyle: 'normal',
   } as TTypographtStyle,
   h3: {
     fontSize: `${baseFontSize * 1.75}rem`,
     lineHeight: `${baseLineHeight}rem`,
     fontWeight: fontWeightMedium,
-    fontStyle: "normal",
+    fontStyle: 'normal',
   },
   h4: {
     fontSize: `${baseFontSize * 1.5}rem`,
     lineHeight: `${baseLineHeight}rem`,
     fontWeight: fontWeightMedium,
-    fontStyle: "normal",
+    fontStyle: 'normal',
   },
   h5: {
     fontSize: `${baseFontSize * 1.25}rem`,
     lineHeight: `${baseLineHeight}rem`,
     fontWeight: fontWeightMedium,
-    fontStyle: "normal",
+    fontStyle: 'normal',
   },
   h6: {
     fontSize: `${baseFontSize}rem`,
     lineHeight: `${baseLineHeight}rem`,
     fontWeight: fontWeightMedium,
-    fontStyle: "normal",
+    fontStyle: 'normal',
   },
   p: {
-    fontSize: "0.875rem",
+    fontSize: '0.875rem',
     lineHeight: `${baseLineHeight}rem`,
     fontWeight: fontWeightRegular,
-    fontStyle: "normal",
+    fontStyle: 'normal',
   },
   span: {
-    fontSize: "0.875rem",
+    fontSize: '0.875rem',
     lineHeight: `${baseLineHeight}rem`,
     fontWeight: fontWeightRegular,
-    fontStyle: "normal",
+    fontStyle: 'normal',
   },
 };
 
