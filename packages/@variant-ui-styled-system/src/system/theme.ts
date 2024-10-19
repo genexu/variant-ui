@@ -6,7 +6,7 @@ import type { TTextField } from '../components/textfield';
 
 export type TComponents = {
   typography: TTypography;
-  textField: TTextField;
+  textfield: TTextField;
 };
 
 export type TThemeBase = {
@@ -31,7 +31,7 @@ export const createTheme = (themeBase: TThemeBase): TTheme => {
 
   const components = {
     typography: themeBase.components.typography,
-    textField: themeBase.components.textField,
+    textField: themeBase.components.textfield,
   };
 
   const theme: TTheme = {
