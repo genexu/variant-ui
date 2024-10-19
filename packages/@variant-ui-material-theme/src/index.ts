@@ -5,7 +5,7 @@ import type {
   TThemeBase,
   TTheme,
   TTypographyVariant,
-  TTypographtStyle,
+  TTypographyProps,
 } from '@variant-ui/styled-system';
 
 const paletteBase: TPaletteBase = {
@@ -36,19 +36,19 @@ const fontWeightMedium = 500;
 const fontWeightRegular = 400;
 const fontWeightLight = 300;
 
-const typography: Record<TTypographyVariant, TTypographtStyle> = {
+const typography: Record<TTypographyVariant, TTypographyProps> = {
   h1: {
     fontSize: 96,
     lineHeight: 1.167,
     fontWeight: fontWeightLight,
     fontStyle: 'normal',
-  } as TTypographtStyle,
+  },
   h2: {
     fontSize: 60,
     lineHeight: 1.2,
     fontWeight: fontWeightLight,
     fontStyle: 'normal',
-  } as TTypographtStyle,
+  },
   h3: {
     fontSize: 48,
     lineHeight: 1.167,

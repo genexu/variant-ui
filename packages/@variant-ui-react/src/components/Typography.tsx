@@ -1,53 +1,48 @@
 import { FC, HTMLAttributes, ReactNode } from 'react';
-import { TTypographyVariant } from '@variant-ui/styled-system';
 import isPropValid from '@emotion/is-prop-valid';
 import styled from '@emotion/styled';
 import { useTheme } from '../hooks/useTheme';
+import type {
+  TTypographyVariant,
+  TTypographyProps,
+} from '@variant-ui/styled-system';
 
-type TFontStyleProps = {
-  fontSize?: number | string;
-  lineHeight?: number | string;
-  fontWeight?: number;
-  fontStyle?: string;
-};
-
-type TTypographyBaseProps = {
+type TTypographyBaseComponentProps = {
   as: TTypographyVariant;
   color?: string;
-} & TFontStyleProps;
+} & TTypographyProps;
 
-type TTypographtBase = FC<HTMLAttributes<HTMLElement> & TTypographyBaseProps>;
+type TTypographtBase = FC<
+  HTMLAttributes<HTMLElement> & TTypographyBaseComponentProps
+>;
 
 const TypographyBase: TTypographtBase = styled('span', {
   shouldForwardProp: (prop) => isPropValid(prop),
-})<TTypographyBaseProps>`
+})<TTypographyBaseComponentProps>`
   color: ${(props) => props.color};
   font-size: ${(props) =>
     typeof props.fontSize === 'number'
       ? `${props.fontSize}px`
       : props.fontSize};
-  line-height: ${(props) =>
-    typeof props.lineHeight === 'number'
-      ? `${props.lineHeight}px`
-      : props.lineHeight};
+  line-height: ${(props) => props.lineHeight};
   font-weight: ${(props) => props.fontWeight};
   font-style: ${(props) => props.fontStyle};
 `;
 
-type TTypographyProps = {
+type TTypographyComponentProps = {
   variant?: TTypographyVariant;
   color?: string | null;
   children: ReactNode;
-} & TFontStyleProps;
+} & TTypographyProps;
 
-type TTypographyComponent = FC<TTypographyProps>;
+type TTypographyComponent = FC<TTypographyComponentProps>;
 
 export const Typography: TTypographyComponent = ({
   variant = 'p',
   color = null,
   children,
   ...props
-}: TTypographyProps) => {
+}: TTypographyComponentProps) => {
   const theme = useTheme();
   if (!theme) return null;
 

@@ -1,2 +1,2 @@
 export { Box } from './Box';
-export { Typography } from './Typegrapht';
+export { Typography } from './Typography';
