@@ -1,30 +1,43 @@
 import { createPalette } from './color';
-import { TTypography } from './typography';
 import type { TColorBase, TColors } from './color';
+import type { TBase } from './base';
+import type { TTypography } from '../components/typography';
+import type { TTextField } from '../components/textfield';
+
+export type TComponents = {
+  typography: TTypography;
+  textField: TTextField;
+};
 
 export type TThemeBase = {
+  base: TBase;
   colors: TColorBase;
-  typography: TTypography;
+  components: TComponents;
 };
 
 export type TTheme = {
+  base: TBase;
   colors: TColors;
-  typography: TTypography;
+  components: TComponents;
 };
 
-export const createTheme = (base: TThemeBase): TTheme => {
-  const palette = createPalette(base.colors.palette);
+export const createTheme = (themeBase: TThemeBase): TTheme => {
+  const palette = createPalette(themeBase.colors.palette);
 
   const colors: TColors = {
-    ...base.colors,
+    ...themeBase.colors,
     palette,
   };
 
-  const typography = base.typography;
+  const components = {
+    typography: themeBase.components.typography,
+    textField: themeBase.components.textField,
+  };
 
   const theme: TTheme = {
+    base: themeBase.base,
     colors,
-    typography,
+    components,
   };
 
   return theme;

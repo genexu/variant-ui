@@ -52,7 +52,7 @@ export const Typography: TTypographyComponent = ({
     <TypographyBase
       as={variant}
       color={color}
-      {...theme.typography[variant]}
+      {...theme.components.typography[variant]}
       {...props}
     >
       {children}
