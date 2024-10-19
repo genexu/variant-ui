@@ -11,10 +11,10 @@ export type TTypographyVariant =
   | 'span';
 
 export type TTypographyProps = {
-  fontSize: number | string;
-  lineHeight: number;
-  fontWeight: TFontWeight;
-  fontStyle: TFontStyle;
+  fontSize?: number | string;
+  lineHeight?: number;
+  fontWeight?: TFontWeight;
+  fontStyle?: TFontStyle;
 };
 
 export type TTypography = {

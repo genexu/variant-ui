@@ -7,7 +7,7 @@ export type TTextFieldVariant =
   | 'floating';
 
 export type TTextFieldProps = {
-  borderRadius: string | number;
+  borderRadius?: string | number;
 };
 
 export type TTextField = {

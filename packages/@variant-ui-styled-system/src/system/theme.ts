@@ -31,7 +31,7 @@ export const createTheme = (themeBase: TThemeBase): TTheme => {
 
   const components = {
     typography: themeBase.components.typography,
-    textField: themeBase.components.textfield,
+    textfield: themeBase.components.textfield,
   };
 
   const theme: TTheme = {
