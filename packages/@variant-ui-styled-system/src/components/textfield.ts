@@ -1,3 +1,5 @@
+import type { TModifier } from './base';
+
 export type TTextFieldVariant =
   | 'default'
   | 'outlined'
@@ -6,10 +8,19 @@ export type TTextFieldVariant =
   | 'filled-floating'
   | 'floating';
 
+export type TTextFieldSx = {
+  formControl: TModifier;
+  formControl_label: TModifier;
+  formControl_input: TModifier;
+};
+
 export type TTextFieldProps = {
-  borderRadius?: string | number;
+  variant?: TTextFieldVariant;
+  label: string;
+  value?: string;
+  placeholder?: string;
 };
 
 export type TTextField = {
-  [key in TTextFieldVariant]: TTextFieldProps;
+  [key in TTextFieldVariant]: TTextFieldSx;
 };

@@ -19,7 +19,7 @@ export const paletteBase: TPaletteBase = {
   gray: '#9E9E9E',
 };
 
-const palette = createPalette(paletteBase);
+export const palette = createPalette(paletteBase);
 
 export const colors: TColorBase = {
   primary: palette.blue[500],
