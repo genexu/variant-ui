@@ -9,6 +9,7 @@
     "build": "tsc -b && vite build"
   },
   "dependencies": {
+    "@emotion/css": "^11.13.4",
     "@variant-ui/styled-system": "link:../@variant-ui-styled-system"
   },
   "devDependencies": {

@@ -1,59 +1,7 @@
 import { useId, FC, InputHTMLAttributes } from 'react';
-import isPropValid from '@emotion/is-prop-valid';
-import styled from '@emotion/styled';
+import { cx } from '@emotion/css';
 import { useTheme } from '../hooks/useTheme';
-import type { TModifier, TTextFieldProps } from '@variant-ui/styled-system';
-
-type TFormControlComponentProps = TModifier;
-
-type TFormControlComponent = FC<TFormControlComponentProps>;
-
-const FormControl: TFormControlComponent = styled('div', {
-  shouldForwardProp: (prop) => isPropValid(prop),
-})<TFormControlComponentProps>`
-  ${(props) => props.defaultSx}
-`;
-
-type TLabelComponentProps = {
-  htmlFor: string;
-} & TModifier;
-
-type TLabelComponent = FC<
-  InputHTMLAttributes<HTMLLabelElement> & TLabelComponentProps
->;
-
-const Label: TLabelComponent = styled('label', {
-  shouldForwardProp: (prop) => isPropValid(prop),
-})<TLabelComponentProps>`
-  ${(props) => props.defaultSx}
-`;
-
-type TInputComponentProps = {
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-} & TModifier;
-
-type TInputComponent = FC<
-  InputHTMLAttributes<HTMLInputElement> & TInputComponentProps
->;
-
-const Input: TInputComponent = styled('input', {
-  shouldForwardProp: (prop) => isPropValid(prop),
-})<TInputComponentProps>`
-  appearance: none;
-  ${(props) => props.defaultSx}
-  &:focus {
-    ${(props) => props.focusSx}
-  }
-  &:active {
-    ${(props) => props.activeSx}
-  }
-  &:hover {
-    ${(props) => props.hoverSx}
-  }
-  &:focus-visible {
-    outline: 0;
-  }
-`;
+import type { TTextFieldProps } from '@variant-ui/styled-system';
 
 export type TTextFieldComponentProps = InputHTMLAttributes<HTMLInputElement> &
   TTextFieldProps & {
@@ -65,7 +13,7 @@ export type TTextField = FC<TTextFieldComponentProps>;
 export const TextField: TTextField = ({
   variant = 'default',
   label,
-  onChange,
+  error,
   ...props
 }: TTextFieldComponentProps) => {
   const id = useId();
@@ -73,16 +21,19 @@ export const TextField: TTextField = ({
 
   if (!theme) return null;
 
-  const e = theme.components.textfield[variant];
+  const sx = theme.components.textfield[variant];
+
+  const rootClassNames = [sx.formControl];
+  if (error) rootClassNames.push('error');
 
   return (
-    <FormControl {...e.formControl}>
+    <div className={cx(...rootClassNames)}>
       {label && (
-        <Label htmlFor={id} {...e.formControl_label}>
+        <label htmlFor={id} className={sx.formControl_label}>
           {label}
-        </Label>
+        </label>
       )}
-      <Input id={id} onChange={onChange} {...e.formControl_input} {...props} />
-    </FormControl>
+      <input id={id} className={sx.formControl_input} {...props} />
+    </div>
   );
 };
