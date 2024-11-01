@@ -6,6 +6,7 @@ import type {
   TComponents,
   TThemeBase,
   TTheme,
+  TShadows,
 } from '@variant-ui/styled-system';
 
 const components: TComponents = {
@@ -13,9 +14,13 @@ const components: TComponents = {
   textfield,
 };
 
+// Boostrap no shadows elevation level
+const shadows: TShadows = new Array(24).fill('none') as TShadows;
+
 const themeBase: TThemeBase = {
   base,
   colors,
+  shadows,
   components,
 };
 

@@ -1,6 +1,7 @@
 import { createPalette } from './color';
-import type { TColorBase, TColors } from './color';
 import type { TBase } from './base';
+import type { TColorBase, TColors } from './color';
+import type { TShadows } from './shadow';
 import type { TTypography } from '../components/typography';
 import type { TTextField } from '../components/textfield';
 
@@ -12,12 +13,14 @@ export type TComponents = {
 export type TThemeBase = {
   base: TBase;
   colors: TColorBase;
+  shadows: TShadows;
   components: TComponents;
 };
 
 export type TTheme = {
   base: TBase;
   colors: TColors;
+  shadows: TShadows;
   components: TComponents;
 };
 
@@ -37,6 +40,7 @@ export const createTheme = (themeBase: TThemeBase): TTheme => {
   const theme: TTheme = {
     base: themeBase.base,
     colors,
+    shadows: themeBase.shadows,
     components,
   };
 
