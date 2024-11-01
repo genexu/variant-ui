@@ -1,8 +1,8 @@
-import { colors } from './base';
 import type {
   TTextFieldVariant,
   TTextFieldSx,
 } from '@variant-ui/styled-system';
+import { colors } from './base';
 
 const defaultTextFieldSx: TTextFieldSx = {
   formControl: {
@@ -19,7 +19,7 @@ const defaultTextFieldSx: TTextFieldSx = {
         transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      &:has(:focus-within) {
+      &:has(:focus-within, input:not(:placeholder-shown)) {
         &:before {
           border-bottom: 2px solid ${colors.primary};
         }

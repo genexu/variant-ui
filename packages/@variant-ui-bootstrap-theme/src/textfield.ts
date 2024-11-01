@@ -5,9 +5,10 @@ import type {
 } from '@variant-ui/styled-system';
 
 const defaultTextFieldSx: TTextFieldSx = {
-  formControl: {},
+  formControl: {
+    defaultSx: ``,
+  },
   formControl_input: {
-    placeholderEnabled: true,
     defaultSx: `
       width: 100%;
       padding: .375rem .75rem;
