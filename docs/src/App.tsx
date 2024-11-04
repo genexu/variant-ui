@@ -4,6 +4,7 @@ import materialTheme from '@variant-ui/material-theme';
 import bootstrapTheme from '@variant-ui/bootstrap-theme';
 import ColorSection from './ColorSection';
 import TextFieldSection from './TextFieldSection';
+import PaperSection from './PaperSection';
 import type { TTheme } from '@variant-ui/styled-system';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <option value="material">Material</option>
         <option value="bootstrap">Bootstrap</option>
       </select>
+      <PaperSection />
       <TextFieldSection />
       <ColorSection />
     </ThemeProvider>
