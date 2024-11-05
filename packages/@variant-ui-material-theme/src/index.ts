@@ -1,5 +1,5 @@
 import { createTheme } from '@variant-ui/styled-system';
-import { base, colors } from './base';
+import { colors } from './color';
 import { typography } from './typography';
 import { textfield } from './textfield';
 import { shadows } from './shadows';
@@ -25,7 +25,6 @@ const components: TComponents = {
 };
 
 const themeBase: TThemeBase = {
-  base,
   breakpoints,
   shadows,
   colors,

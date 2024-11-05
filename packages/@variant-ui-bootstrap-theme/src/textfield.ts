@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { base, colors, palette } from './base';
+import { colors, palette } from './color';
 import type {
   TTextFieldVariant,
   TTextFieldSx,
@@ -18,7 +18,7 @@ const defaultFormControlInputSx = {
   width: '100%',
   padding: '0.375rem 0.75rem',
   border: `1px solid ${palette.gray[700]}`,
-  borderRadius: `${base.borderRadius}px`,
+  borderRadius: '4px',
   transition: 'border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out',
   '&:focus-visible': {
     outline: 'none',

@@ -1,6 +1,5 @@
 import { createPalette } from './color';
 import { sizes } from './size';
-import type { TBase } from './base';
 import type { TBreakpointBase, TBreakpoints } from './breakpoint';
 import type { TColorBase, TColors } from './color';
 import type { TShadows } from './shadow';
@@ -14,7 +13,6 @@ export type TComponents = {
 };
 
 export type TThemeBase = {
-  base: TBase;
   breakpoints: TBreakpointBase;
   colors: TColorBase;
   shadows: TShadows;
@@ -22,7 +20,6 @@ export type TThemeBase = {
 };
 
 export type TTheme = {
-  base: TBase;
   breakpoints: TBreakpoints;
   colors: TColors;
   shadows: TShadows;
@@ -49,7 +46,6 @@ export const createTheme = (themeBase: TThemeBase): TTheme => {
   };
 
   const theme: TTheme = {
-    base: themeBase.base,
     breakpoints,
     colors,
     shadows: themeBase.shadows,

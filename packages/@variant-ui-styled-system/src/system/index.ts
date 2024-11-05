@@ -1,4 +1,3 @@
-export * from './base';
 export * from './breakpoint';
 export * from './color';
 export * from './font';

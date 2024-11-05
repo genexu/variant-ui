@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { colors, palette } from './base';
+import { colors, palette } from './color';
 import type {
   TTextFieldVariant,
   TTextFieldSx,

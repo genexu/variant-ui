@@ -1,13 +1,5 @@
 import { createPalette } from '@variant-ui/styled-system';
-import type {
-  TBase,
-  TColorBase,
-  TPaletteBase,
-} from '@variant-ui/styled-system';
-
-export const base: TBase = {
-  borderRadius: 4,
-};
+import type { TColorBase, TPaletteBase } from '@variant-ui/styled-system';
 
 export const paletteBase: TPaletteBase = {
   red: '#dc3545',
