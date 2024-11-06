@@ -1,13 +1,16 @@
 import { createPalette } from './color';
+import { createMediaQuery } from './mq';
 import { sizes } from './size';
 import type { TBreakpointBase, TBreakpoints } from './breakpoint';
+import type { TMediaQuery } from './mq';
 import type { TColorBase, TColors } from './color';
 import type { TShadows } from './shadow';
-import type { TSize } from './size';
 import type { TTypography } from '../components/typography';
 import type { TTextField } from '../components/textfield';
+import type { TContainer } from '../components/container';
 
 export type TComponents = {
+  container: TContainer;
   typography: TTypography;
   textfield: TTextField;
 };
@@ -21,9 +24,9 @@ export type TThemeBase = {
 
 export type TTheme = {
   breakpoints: TBreakpoints;
+  mq: TMediaQuery;
   colors: TColors;
   shadows: TShadows;
-  sizes: TSize[];
   components: TComponents;
 };
 
@@ -34,6 +37,7 @@ export const createTheme = (themeBase: TThemeBase): TTheme => {
   }, {} as TBreakpoints);
 
   const palette = createPalette(themeBase.colors.palette);
+  const mq = createMediaQuery(themeBase.breakpoints);
 
   const colors: TColors = {
     ...themeBase.colors,
@@ -41,15 +45,16 @@ export const createTheme = (themeBase: TThemeBase): TTheme => {
   };
 
   const components = {
+    container: themeBase.components.container,
     typography: themeBase.components.typography,
     textfield: themeBase.components.textfield,
   };
 
   const theme: TTheme = {
     breakpoints,
+    mq,
     colors,
     shadows: themeBase.shadows,
-    sizes,
     components,
   };
 
