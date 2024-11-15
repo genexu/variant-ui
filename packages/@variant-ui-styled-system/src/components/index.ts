@@ -1,3 +1,4 @@
+export * from './appbar';
 export * from './box';
 export * from './container';
 export * from './paper';

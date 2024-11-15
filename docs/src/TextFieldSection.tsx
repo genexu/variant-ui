@@ -6,7 +6,9 @@ const TextFieldSection = () => {
 
   return (
     <>
-      <Typography variant="h4">TextField</Typography>
+      <Typography variant="h4" gutterBottom>
+        TextField
+      </Typography>
       <TextField
         label="Search: "
         placeholder="Search..."

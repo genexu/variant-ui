@@ -15,6 +15,7 @@ export type TTypographyProps = {
   lineHeight?: number;
   fontWeight?: TFontWeight;
   fontStyle?: TFontStyle;
+  gutterBottom?: boolean;
 };
 
 export type TTypography = {

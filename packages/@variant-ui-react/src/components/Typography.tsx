@@ -27,11 +27,13 @@ const TypographyBase: TTypographtBase = styled('span', {
   line-height: ${(props) => props.lineHeight};
   font-weight: ${(props) => props.fontWeight};
   font-style: ${(props) => props.fontStyle};
+  margin: 0px;
+  margin-bottom: ${(props) => props.gutterBottom && '0.35em'};
 `;
 
 type TTypographyComponentProps = {
   variant?: TTypographyVariant;
-  color?: string | null;
+  color?: string;
   children: ReactNode;
 } & TTypographyProps;
 
@@ -39,14 +41,12 @@ type TTypographyComponent = FC<TTypographyComponentProps>;
 
 export const Typography: TTypographyComponent = ({
   variant = 'p',
-  color = null,
+  color = 'inherit',
   children,
   ...props
 }: TTypographyComponentProps) => {
   const theme = useTheme();
   if (!theme) return null;
-
-  if (!color) color = theme.colors.black;
 
   return (
     <TypographyBase

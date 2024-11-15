@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { Container, Typography, ThemeProvider } from '@variant-ui/react';
+import {
+  AppBar,
+  Box,
+  Container,
+  Typography,
+  ThemeProvider,
+} from '@variant-ui/react';
 import materialTheme from '@variant-ui/material-theme';
 import bootstrapTheme from '@variant-ui/bootstrap-theme';
 import ColorSection from './ColorSection';
@@ -19,15 +25,28 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <AppBar position="static">
+        <Box display="flex" alignItems="center" justifyContent="space-between">
+          <Typography variant="h6">Variant UI</Typography>
+          <select
+            name="theme"
+            onChange={(e) => setTheme(themes[e.target.value])}
+          >
+            <option value="material">Material</option>
+            <option value="bootstrap">Bootstrap</option>
+          </select>
+        </Box>
+      </AppBar>
       <Container>
-        <Typography variant="h3">Variant UI</Typography>
-        <select name="theme" onChange={(e) => setTheme(themes[e.target.value])}>
-          <option value="material">Material</option>
-          <option value="bootstrap">Bootstrap</option>
-        </select>
-        <PaperSection />
-        <TextFieldSection />
-        <ColorSection />
+        <Box padding="24px 0">
+          <PaperSection />
+        </Box>
+        <Box padding="24px 0">
+          <TextFieldSection />
+        </Box>
+        <Box padding="24px 0">
+          <ColorSection />
+        </Box>
       </Container>
     </ThemeProvider>
   );

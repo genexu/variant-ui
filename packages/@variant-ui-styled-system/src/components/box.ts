@@ -1,12 +1,21 @@
 export type TBoxProps = {
   display?: string;
+  position?: 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative';
+  top?: number | string;
+  right?: number | string;
+  bottom?: number | string;
+  left?: number | string;
   flex?: number;
-  flexDirection?: string;
+  flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   flexFlow?: string;
+  alignItems?: string;
+  justifyContent?: string;
   width?: number | string;
+  minWidth?: number | string;
   height?: number | string;
-  bgColor?: string;
+  minHeight?: number | string;
   color?: string;
+  bgColor?: string;
   boxShadow?: string;
   margin?: number | string;
   padding?: number | string;

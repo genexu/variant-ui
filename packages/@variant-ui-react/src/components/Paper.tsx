@@ -1,11 +1,13 @@
-import { FC, HTMLAttributes } from 'react';
+import { FC, HTMLAttributes, ElementType } from 'react';
 import { Box } from './Box';
 import { useTheme } from '../hooks/useTheme';
 import type { TBoxProps, TPaperProps } from '@variant-ui/styled-system';
 
 type TPaperComponentProps = HTMLAttributes<HTMLDivElement> &
   TBoxProps &
-  TPaperProps;
+  TPaperProps & {
+    as?: ElementType;
+  };
 
 type TPaper = FC<TPaperComponentProps>;
 

@@ -3,9 +3,11 @@ import { mq } from './mq';
 import { TContainer } from '@variant-ui/styled-system';
 
 const defaultContainer = {
-  padding: '0 12rem',
+  width: '100%',
+  padding: '0 24px',
+  'box-sizing': 'border-box',
   [mq.lg.down as string]: {
-    padding: '0 1rem',
+    padding: '0 16px',
   },
 };
 

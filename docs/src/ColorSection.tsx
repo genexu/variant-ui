@@ -13,7 +13,9 @@ const ColorBlock = ({ w, h, color, name }: TColorBlock) => {
 
   return (
     <Box>
-      <Typography variant="h6">{name}</Typography>
+      <Typography variant="h6" gutterBottom>
+        {name}
+      </Typography>
       <Box width={w} height={h} bgColor={color} />
     </Box>
   );
@@ -32,7 +34,9 @@ const ColorScale = ({ color }: TColorScale) => {
 
   return (
     <Box>
-      <Typography variant="h6">{color}</Typography>
+      <Typography variant="h6" gutterBottom>
+        {color}
+      </Typography>
       <Box display="flex" flexDirection="column">
         {index.map((i) => (
           <ColorBlock key={i} w={100} h={50} color={palette[i]} />
@@ -50,7 +54,9 @@ const ColorSection = () => {
 
   return (
     <>
-      <Typography variant="h4">Color Palette</Typography>
+      <Typography variant="h4" gutterBottom>
+        Color Palette
+      </Typography>
       <Box display="flex">
         <ColorBlock name="primary" w={100} h={100} color={colors.primary} />
         <ColorBlock name="secondary" w={100} h={100} color={colors.secondary} />
