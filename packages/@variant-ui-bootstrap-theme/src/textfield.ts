@@ -16,6 +16,7 @@ const defaultFormControlSx = {
 };
 const defaultFormControlInputSx = {
   width: '100%',
+  'box-sizing': 'border-box',
   padding: '0.375rem 0.75rem',
   border: `1px solid ${palette.gray[700]}`,
   borderRadius: '4px',
