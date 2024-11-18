@@ -10,6 +10,8 @@ export type TTypographyVariant =
   | 'p'
   | 'span';
 
+export type TTypographySx = string;
+
 export type TTypographyProps = {
   fontSize?: number | string;
   lineHeight?: number;
@@ -19,5 +21,19 @@ export type TTypographyProps = {
 };
 
 export type TTypography = {
-  [key in TTypographyVariant]: TTypographyProps;
+  [key in TTypographyVariant]: TTypographySx;
 };
+
+export function createTypography(
+  fontSize: string,
+  lineHeight: string,
+  fontWeight: TFontWeight,
+  fontStyle: TFontStyle,
+) {
+  return `
+    font-size: ${fontSize};
+    line-height: ${lineHeight};
+    font-weight: ${fontWeight};
+    font-style: ${fontStyle};
+  `;
+}

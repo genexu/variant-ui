@@ -20,15 +20,6 @@ const TypographyBase: TTypographtBase = styled('span', {
   shouldForwardProp: (prop) => isPropValid(prop),
 })<TTypographyBaseComponentProps>`
   color: ${(props) => props.color};
-  font-size: ${(props) =>
-    typeof props.fontSize === 'number'
-      ? `${props.fontSize}px`
-      : props.fontSize};
-  line-height: ${(props) => props.lineHeight};
-  font-weight: ${(props) => props.fontWeight};
-  font-style: ${(props) => props.fontStyle};
-  margin: 0px;
-  margin-bottom: ${(props) => props.gutterBottom && '0.35em'};
 `;
 
 type TTypographyComponentProps = {
@@ -48,11 +39,13 @@ export const Typography: TTypographyComponent = ({
   const theme = useTheme();
   if (!theme) return null;
 
+  console.log(theme.components.typography[variant]);
+
   return (
     <TypographyBase
       as={variant}
+      className={theme.components.typography[variant]}
       color={color}
-      {...theme.components.typography[variant]}
       {...props}
     >
       {children}
