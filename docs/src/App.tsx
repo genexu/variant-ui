@@ -12,6 +12,7 @@ import bootstrapTheme from '@variant-ui/bootstrap-theme';
 import ColorSection from './ColorSection';
 import TextFieldSection from './TextFieldSection';
 import PaperSection from './PaperSection';
+import ButtonSection from './ButtonSection';
 import type { TTheme } from '@variant-ui/styled-system';
 
 const App = () => {
@@ -54,6 +55,9 @@ const App = () => {
           </AppBar>
           <Container>
             <Box padding="48px 0 0 0" /> {/* The baseline for AppBar */}
+            <Box padding="12px 0">
+              <ButtonSection />
+            </Box>
             <Box padding="12px 0">
               <PaperSection />
             </Box>

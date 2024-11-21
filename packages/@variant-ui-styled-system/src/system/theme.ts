@@ -5,11 +5,13 @@ import type { TBreakpointBase, TBreakpoints } from './breakpoint';
 import type { TMediaQuery } from './mq';
 import type { TColorBase, TColors } from './color';
 import type { TShadows } from './shadow';
+import type { TButton } from '../components/button';
 import type { TTypography } from '../components/typography';
 import type { TTextField } from '../components/textfield';
 import type { TContainer } from '../components/container';
 
 export type TComponents = {
+  button: TButton;
   container: TContainer;
   typography: TTypography;
   textfield: TTextField;
@@ -45,6 +47,7 @@ export const createTheme = (themeBase: TThemeBase): TTheme => {
   };
 
   const components = {
+    button: themeBase.components.button,
     container: themeBase.components.container,
     typography: themeBase.components.typography,
     textfield: themeBase.components.textfield,
