@@ -13,7 +13,7 @@ const ColorBlock = ({ w, h, color, name }: TColorBlock) => {
 
   return (
     <Box>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="p" gutterBottom>
         {name}
       </Typography>
       <Box width={w} height={h} bgColor={color} />
@@ -34,7 +34,7 @@ const ColorScale = ({ color }: TColorScale) => {
 
   return (
     <Box>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="p" gutterBottom>
         {color}
       </Typography>
       <Box display="flex" flexDirection="column">
@@ -57,7 +57,7 @@ const ColorSection = () => {
       <Typography variant="h4" gutterBottom>
         Color Palette
       </Typography>
-      <Box display="flex">
+      <Box display="flex" margin="24px 0">
         <ColorBlock name="primary" w={100} h={100} color={colors.primary} />
         <ColorBlock name="secondary" w={100} h={100} color={colors.secondary} />
         <ColorBlock name="success" w={100} h={100} color={colors.success} />
