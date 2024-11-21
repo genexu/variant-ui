@@ -10,7 +10,9 @@ const PaperSection = () => {
 
   return (
     <>
-      <Typography variant="h4" gutterBottom>Paper</Typography>
+      <Typography variant="h4" gutterBottom>
+        Paper
+      </Typography>
       <Box display="flex" flexFlow="wrap">
         {elevations.map((elevation) => (
           <Paper
@@ -18,7 +20,7 @@ const PaperSection = () => {
             elevation={elevation}
             width={100}
             height={60}
-            margin={12}
+            margin="0 24px 24px 0"
             padding={6}
             borderWidth={1}
             borderColor={borderColor}

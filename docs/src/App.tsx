@@ -3,6 +3,7 @@ import {
   AppBar,
   Box,
   Container,
+  Paper,
   Typography,
   ThemeProvider,
 } from '@variant-ui/react';
@@ -25,31 +26,46 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="static">
-        <Box display="flex" alignItems="center" justifyContent="space-between">
-          <Typography variant="h1" fontSize="18px" fontWeight={400}>
-            Variant UI
-          </Typography>
-          <select
-            name="theme"
-            onChange={(e) => setTheme(themes[e.target.value])}
-          >
-            <option value="material">Material</option>
-            <option value="bootstrap">Bootstrap</option>
-          </select>
+      <Box display="flex">
+        <Paper
+          position="fixed"
+          height="100vh"
+          width="240px"
+          borderWidth="0 1px 0 0"
+          borderColor="#DFDFDF"
+        >
+          <Box padding="14px">
+            <Typography variant="h1" fontSize="24px" fontWeight={400}>
+              Variant UI
+            </Typography>
+          </Box>
+        </Paper>
+        <Box flex={1} position="relative" padding="0 0 0 240px">
+          <AppBar position="fixed" left="240px" right="0">
+            <Box display="flex" alignItems="center">
+              <select
+                name="theme"
+                onChange={(e) => setTheme(themes[e.target.value])}
+              >
+                <option value="material">Material</option>
+                <option value="bootstrap">Bootstrap</option>
+              </select>
+            </Box>
+          </AppBar>
+          <Container>
+            <Box padding="48px 0 0 0" /> {/* The baseline for AppBar */}
+            <Box padding="12px 0">
+              <PaperSection />
+            </Box>
+            <Box padding="12px 0">
+              <TextFieldSection />
+            </Box>
+            <Box padding="12px 0">
+              <ColorSection />
+            </Box>
+          </Container>
         </Box>
-      </AppBar>
-      <Container>
-        <Box padding="24px 0">
-          <PaperSection />
-        </Box>
-        <Box padding="24px 0">
-          <TextFieldSection />
-        </Box>
-        <Box padding="24px 0">
-          <ColorSection />
-        </Box>
-      </Container>
+      </Box>
     </ThemeProvider>
   );
 };

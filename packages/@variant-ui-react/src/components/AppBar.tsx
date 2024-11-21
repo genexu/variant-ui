@@ -32,9 +32,6 @@ export const AppBar: TAppBar = ({
       minHeight={48}
       display="flex"
       alignItems="center"
-      top={0}
-      left={0}
-      right={0}
     >
       <Container>{children}</Container>
     </Paper>
