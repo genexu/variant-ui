@@ -9,7 +9,6 @@ import type {
 
 type TTypographyBaseComponentProps = {
   as: TTypographyVariant;
-  color?: string;
 } & TTypographyProps;
 
 type TTypographtBase = FC<
@@ -19,12 +18,15 @@ type TTypographtBase = FC<
 const TypographyBase: TTypographtBase = styled('span', {
   shouldForwardProp: (prop) => isPropValid(prop),
 })<TTypographyBaseComponentProps>`
+  margin-top: 0;
   color: ${(props) => props.color};
+  ${(props) => props.fontSize && `font-size: ${props.fontSize}`};
+  ${(props) => props.fontWeight && `font-weight: ${props.fontWeight}`};
+  ${(props) => props.lineHeight && `line-height: ${props.lineHeight}`};
+  ${(props) => !props.gutterBottom && 'margin-bottom: 0'};
 `;
 
 type TTypographyComponentProps = {
-  variant?: TTypographyVariant;
-  color?: string;
   children: ReactNode;
 } & TTypographyProps;
 
@@ -38,8 +40,6 @@ export const Typography: TTypographyComponent = ({
 }: TTypographyComponentProps) => {
   const theme = useTheme();
   if (!theme) return null;
-
-  console.log(theme.components.typography[variant]);
 
   return (
     <TypographyBase

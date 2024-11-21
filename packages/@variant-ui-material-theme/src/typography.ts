@@ -1,4 +1,5 @@
 import { css } from '@emotion/css';
+import { createTypography } from '@variant-ui/styled-system';
 import type {
   TTypographyVariant,
   TTypographySx,
@@ -8,27 +9,35 @@ const fontWeightMedium = 500;
 const fontWeightRegular = 400;
 const fontWeightLight = 300;
 
-function createTypography(
-  fontSize: string,
-  lineHeight: string,
-  fontWeight: number,
-  fontStyle: string,
-) {
-  return css(`
-    font-size: ${fontSize};
-    line-height: ${lineHeight};
-    font-weight: ${fontWeight};
-    font-style: ${fontStyle};
-  `);
-}
-
 export const typography: Record<TTypographyVariant, TTypographySx> = {
-  h1: createTypography('96px', '1.167rem', fontWeightLight, 'normal'),
-  h2: createTypography('60px', '1.2rem', fontWeightLight, 'normal'),
-  h3: createTypography('48px', '1.167rem', fontWeightRegular, 'normal'),
-  h4: createTypography('34px', '1.235rem', fontWeightRegular, 'normal'),
-  h5: createTypography('24px', '1.334rem', fontWeightRegular, 'normal'),
-  h6: createTypography('20px', '1.6rem', fontWeightMedium, 'normal'),
-  p: createTypography('14px', '1.5rem', fontWeightRegular, 'normal'),
-  span: createTypography('14px', '1.5rem', fontWeightRegular, 'normal'),
+  h1: css(
+    createTypography('6rem', '1.167', fontWeightLight, 'normal', '0.35em'),
+  ),
+  h2: css(
+    createTypography('3.75rem', '1.2', fontWeightLight, 'normal', '0.35em'),
+  ),
+  h3: css(
+    createTypography('3rem', '1.167', fontWeightRegular, 'normal', '0.35em'),
+  ),
+  h4: css(
+    createTypography(
+      '2.125rem',
+      '1.235',
+      fontWeightRegular,
+      'normal',
+      '0.35em',
+    ),
+  ),
+  h5: css(
+    createTypography('1.5rem', '1.334', fontWeightRegular, 'normal', '0.35em'),
+  ),
+  h6: css(
+    createTypography('1.25rem', '1.6', fontWeightMedium, 'normal', '0.35em'),
+  ),
+  p: css(
+    createTypography('1rem', '1.5', fontWeightRegular, 'normal', '0.35em'),
+  ),
+  span: css(
+    createTypography('1rem', '1.5', fontWeightRegular, 'normal', '0.35em'),
+  ),
 };

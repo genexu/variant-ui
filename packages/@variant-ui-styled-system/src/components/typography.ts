@@ -13,6 +13,8 @@ export type TTypographyVariant =
 export type TTypographySx = string;
 
 export type TTypographyProps = {
+  variant?: TTypographyVariant;
+  color?: string;
   fontSize?: number | string;
   lineHeight?: number;
   fontWeight?: TFontWeight;
@@ -29,11 +31,13 @@ export function createTypography(
   lineHeight: string,
   fontWeight: TFontWeight,
   fontStyle: TFontStyle,
+  marginButtom: string = '0px',
 ) {
   return `
     font-size: ${fontSize};
     line-height: ${lineHeight};
     font-weight: ${fontWeight};
     font-style: ${fontStyle};
+    margin-bottom: ${marginButtom};
   `;
 }

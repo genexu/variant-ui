@@ -27,7 +27,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <AppBar position="static">
         <Box display="flex" alignItems="center" justifyContent="space-between">
-          <Typography variant="h6">Variant UI</Typography>
+          <Typography variant="h1" fontSize="18px" fontWeight={400}>
+            Variant UI
+          </Typography>
           <select
             name="theme"
             onChange={(e) => setTheme(themes[e.target.value])}

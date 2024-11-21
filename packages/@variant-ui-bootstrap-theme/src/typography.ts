@@ -1,4 +1,5 @@
 import { css } from '@emotion/css';
+import { createTypography } from '@variant-ui/styled-system';
 import type {
   TTypographyVariant,
   TTypographySx,
@@ -7,56 +8,29 @@ import type {
 const fontWeightMedium = 500;
 const fontWeightRegular = 400;
 
-const baseFontSize = 1; // rem
-const baseLineHeight = 1.2;
-
 export const typography: Record<TTypographyVariant, TTypographySx> = {
-  h1: css(`
-    fontSize: ${baseFontSize * 2.5}rem;
-    lineHeight: ${baseLineHeight}rem;
-    fontWeight: ${fontWeightMedium};
-    fontStyle: 'normal';
-  `),
-  h2: css(`
-    fontSize: ${baseFontSize * 2}rem;
-    lineHeight: ${baseLineHeight}rem;
-    fontWeight: ${fontWeightMedium};
-    fontStyle: 'normal';
-  `),
-  h3: css(`
-    fontSize: ${baseFontSize * 1.75}rem;
-    lineHeight: ${baseLineHeight}rem;
-    fontWeight: ${fontWeightMedium};
-    fontStyle: 'normal';
-  `),
-  h4: css(`
-    fontSize: ${baseFontSize * 1.5}rem;
-    lineHeight: ${baseLineHeight}rem;
-    fontWeight: ${fontWeightMedium};
-    fontStyle: 'normal';
-  `),
-  h5: css(`
-    fontSize: ${baseFontSize * 1.25}rem;
-    lineHeight: ${baseLineHeight}rem;
-    fontWeight: ${fontWeightMedium};
-    fontStyle: 'normal';
-  `),
-  h6: css(`
-    fontSize: ${baseFontSize}rem;
-    lineHeight: ${baseLineHeight}rem;
-    fontWeight: ${fontWeightMedium};
-    fontStyle: 'normal';
-  `),
-  p: css(`
-    fontSize: '0.875rem';
-    lineHeight: ${baseLineHeight}rem;
-    fontWeight: ${fontWeightRegular};
-    fontStyle: 'normal';
-  `),
-  span: css(`
-    fontSize: '0.875rem';
-    lineHeight: ${baseLineHeight}rem;
-    fontWeight: ${fontWeightRegular};
-    fontStyle: 'normal';
-  `),
+  h1: css(
+    createTypography('2.5rem', '1.2', fontWeightMedium, 'normal', '0.5rem'),
+  ),
+  h2: css(
+    createTypography('2rem', '1.2', fontWeightMedium, 'normal', '0.5rem'),
+  ),
+  h3: css(
+    createTypography('1.75rem', '1.2', fontWeightMedium, 'normal', '0.5rem'),
+  ),
+  h4: css(
+    createTypography('1.5rem', '1.2', fontWeightMedium, 'normal', '0.5rem'),
+  ),
+  h5: css(
+    createTypography('1.25rem', '1.2', fontWeightMedium, 'normal', '0.5rem'),
+  ),
+  h6: css(
+    createTypography('1rem', '1.2', fontWeightMedium, 'normal', '0.5rem'),
+  ),
+  p: css(
+    createTypography('0.875rem', '1.2', fontWeightRegular, 'normal', '0.5rem'),
+  ),
+  span: css(
+    createTypography('0.875rem', '1.2', fontWeightRegular, 'normal', '0.5rem'),
+  ),
 };
