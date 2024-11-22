@@ -212,6 +212,9 @@ importers:
 
   packages/@variant-ui-styled-system:
     dependencies:
+      '@emotion/css':
+        specifier: ^11.13.4
+        version: 11.13.4
       polished:
         specifier: ^4.3.1
         version: 4.3.1

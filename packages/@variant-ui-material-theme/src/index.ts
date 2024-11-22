@@ -8,6 +8,7 @@ import { typography } from './typography';
 import { textfield } from './textfield';
 import { container } from './container';
 import { shadows } from './shadows';
+import { list } from './list';
 // types
 import type {
   TComponents,
@@ -20,6 +21,7 @@ const components: TComponents = {
   typography,
   textfield,
   container,
+  list,
 };
 
 const themeBase: TThemeBase = {

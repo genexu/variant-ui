@@ -7,6 +7,7 @@ import { button } from './button';
 import { typography } from './typography';
 import { textfield } from './textfield';
 import { container } from './container';
+import { list } from './list';
 // types
 import type {
   TComponents,
@@ -20,6 +21,7 @@ const components: TComponents = {
   container,
   typography,
   textfield,
+  list,
 };
 
 // Boostrap no shadows elevation level

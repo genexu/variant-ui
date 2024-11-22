@@ -6,15 +6,17 @@ import type { TMediaQuery } from './mq';
 import type { TColorBase, TColors } from './color';
 import type { TShadows } from './shadow';
 import type { TButton } from '../components/button';
+import type { TContainer } from '../components/container';
+import type { TListSXes } from '../components/list';
 import type { TTypography } from '../components/typography';
 import type { TTextField } from '../components/textfield';
-import type { TContainer } from '../components/container';
 
 export type TComponents = {
   button: TButton;
   container: TContainer;
   typography: TTypography;
   textfield: TTextField;
+  list: TListSXes;
 };
 
 export type TThemeBase = {
@@ -49,6 +51,7 @@ export const createTheme = (themeBase: TThemeBase): TTheme => {
   const components = {
     button: themeBase.components.button,
     container: themeBase.components.container,
+    list: themeBase.components.list,
     typography: themeBase.components.typography,
     textfield: themeBase.components.textfield,
   };
