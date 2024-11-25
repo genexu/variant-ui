@@ -3,6 +3,7 @@ import { createTheme } from '@variant-ui/styled-system';
 import { colors } from './color';
 import { breakpoints } from './breakpoint';
 // components
+import { appbar } from './appbar';
 import { button } from './button';
 import { typography } from './typography';
 import { textfield } from './textfield';
@@ -17,6 +18,7 @@ import type {
 } from '@variant-ui/styled-system';
 
 const components: TComponents = {
+  appbar,
   button,
   typography,
   textfield,

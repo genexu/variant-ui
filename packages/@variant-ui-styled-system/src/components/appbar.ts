@@ -1,3 +1,7 @@
+import type { CSSObject } from '@emotion/css/create-instance';
+
+export type TAppBarSX = CSSObject;
+
 export type AppBarProps = {
   width?: number | string;
   position?: 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative';

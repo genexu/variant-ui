@@ -23,4 +23,5 @@ export type TBoxProps = {
   borderWidth?: number | string;
   borderRadius?: number | string;
   borderStyle?: 'solid' | 'dashed' | 'dotted';
+  zIndex?: number;
 };
