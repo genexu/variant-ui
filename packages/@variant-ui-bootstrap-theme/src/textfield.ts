@@ -1,9 +1,9 @@
-import { css } from '@emotion/css';
 import { colors, palette } from './color';
 import type {
-  TTextFieldVariant,
-  TTextFieldSx,
+  TTextField,
+  TTextFieldStructureElement,
 } from '@variant-ui/styled-system';
+import type { CSSObject } from '@emotion/css/create-instance';
 
 const defaultFormControlSx = {
   marginBottom: '8px',
@@ -39,13 +39,13 @@ const defaultFormControlLabelSx = {
   marginBottom: '0.5rem',
 };
 
-const defaultTextFieldSx: TTextFieldSx = {
-  formControl: css(defaultFormControlSx),
-  formControl_input: css(defaultFormControlInputSx),
-  formControl_label: css(defaultFormControlLabelSx),
+const defaultTextFieldSx: Record<TTextFieldStructureElement, CSSObject> = {
+  root: defaultFormControlSx,
+  formControl_label: defaultFormControlLabelSx,
+  formControl_input: defaultFormControlInputSx,
 };
 
-export const textfield: Record<TTextFieldVariant, TTextFieldSx> = {
+export const textfield: TTextField = {
   default: defaultTextFieldSx,
   outlined: defaultTextFieldSx,
   'outlined-floating': defaultTextFieldSx,

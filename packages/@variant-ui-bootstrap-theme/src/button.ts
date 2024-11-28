@@ -1,7 +1,7 @@
 import { css } from '@emotion/css';
 import { colors, palette } from './color';
 import type { CSSObject } from '@emotion/css/create-instance';
-import type { TButtonVariant, TButtonSx } from '@variant-ui/styled-system';
+import type { TButton } from '@variant-ui/styled-system';
 
 const defaultButtonSx: CSSObject = {
   display: 'inline-block',
@@ -49,9 +49,17 @@ outlinedButtonSx = Object.assign(outlinedButtonSx, {
   },
 });
 
-export const button: Record<TButtonVariant, TButtonSx> = {
-  text: css(textButtonSx),
-  contained: css(containedButtonSx),
-  'contained-floating': css(containerdFloatingButtonSx),
-  outlined: css(outlinedButtonSx),
+export const button: TButton = {
+  text: {
+    root: textButtonSx,
+  },
+  contained: {
+    root: containedButtonSx,
+  },
+  'contained-floating': {
+    root: containerdFloatingButtonSx,
+  },
+  outlined: {
+    root: outlinedButtonSx,
+  },
 };

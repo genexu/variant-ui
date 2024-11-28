@@ -1,3 +1,5 @@
-import { TAppBarSX } from '@variant-ui/styled-system';
+import { TAppBar } from '@variant-ui/styled-system';
 
-export const appbar: TAppBarSX = {};
+export const appbar: TAppBar = {
+  default: { root: {} },
+};

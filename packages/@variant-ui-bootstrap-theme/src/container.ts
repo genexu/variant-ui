@@ -1,4 +1,3 @@
-import { css } from '@emotion/css';
 import { mq } from './mq';
 import { TContainer } from '@variant-ui/styled-system';
 
@@ -12,6 +11,6 @@ const defaultContainer = {
 };
 
 export const container: TContainer = {
-  fluid: css(defaultContainer),
-  fixed: css(defaultContainer),
+  fluid: { root: defaultContainer },
+  fixed: { root: defaultContainer },
 };
