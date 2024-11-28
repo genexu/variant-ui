@@ -1,3 +1,4 @@
+import { TComponent } from '../system/component';
 import { TFontWeight, TFontStyle } from '../system/font';
 
 export type TTypographyVariant =
@@ -10,7 +11,12 @@ export type TTypographyVariant =
   | 'p'
   | 'span';
 
-export type TTypographySx = string;
+export type TTypographyStructureElement = 'root';
+
+export type TTypography = TComponent<
+  TTypographyVariant,
+  TTypographyStructureElement
+>;
 
 export type TTypographyProps = {
   variant?: TTypographyVariant;
@@ -20,10 +26,6 @@ export type TTypographyProps = {
   fontWeight?: TFontWeight;
   fontStyle?: TFontStyle;
   gutterBottom?: boolean;
-};
-
-export type TTypography = {
-  [key in TTypographyVariant]: TTypographySx;
 };
 
 export function createTypography(

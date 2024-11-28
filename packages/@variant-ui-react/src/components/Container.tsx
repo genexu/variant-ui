@@ -1,12 +1,7 @@
-// Container component
-// props
-//  children: ReactNode
-//  variant?: 'fluid' | 'fixed'; default: fluid
-//  maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'; default: lg
-
 import { FC, HTMLAttributes } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import type { TContainerProps } from '@variant-ui/styled-system';
+import { css } from '@emotion/css';
 
 export type TContainerComponentProps = HTMLAttributes<HTMLDivElement> &
   TContainerProps;
@@ -18,10 +13,9 @@ export const Container: TContainer = ({
   variant = 'fluid',
 }: TContainerComponentProps) => {
   const theme = useTheme();
-
   if (!theme) return null;
 
-  const sx = theme.components.container[variant];
+  const sx = theme.components.container[variant].root;
 
-  return <div className={sx}>{children}</div>;
+  return <div className={css(sx)}>{children}</div>;
 };

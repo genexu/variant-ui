@@ -6,6 +6,7 @@ import type {
   TTypographyVariant,
   TTypographyProps,
 } from '@variant-ui/styled-system';
+import { css } from '@emotion/css';
 
 type TTypographyBaseComponentProps = {
   as: TTypographyVariant;
@@ -41,13 +42,10 @@ export const Typography: TTypographyComponent = ({
   const theme = useTheme();
   if (!theme) return null;
 
+  const sx = theme.components.typography[variant].root;
+
   return (
-    <TypographyBase
-      as={variant}
-      className={theme.components.typography[variant]}
-      color={color}
-      {...props}
-    >
+    <TypographyBase as={variant} className={css(sx)} color={color} {...props}>
       {children}
     </TypographyBase>
   );

@@ -5,22 +5,7 @@ import type { TBreakpointBase, TBreakpoints } from './breakpoint';
 import type { TMediaQuery } from './mq';
 import type { TColorBase, TColors } from './color';
 import type { TShadows } from './shadow';
-// components
-import type { TAppBarSX } from '../components/appbar';
-import type { TButton } from '../components/button';
-import type { TContainer } from '../components/container';
-import type { TListSXes } from '../components/list';
-import type { TTypography } from '../components/typography';
-import type { TTextField } from '../components/textfield';
-
-export type TComponents = {
-  appbar: TAppBarSX;
-  button: TButton;
-  container: TContainer;
-  typography: TTypography;
-  textfield: TTextField;
-  list: TListSXes;
-};
+import type { TComponents } from './component';
 
 export type TThemeBase = {
   breakpoints: TBreakpointBase;

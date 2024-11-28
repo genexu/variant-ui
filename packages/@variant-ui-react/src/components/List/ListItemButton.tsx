@@ -15,11 +15,10 @@ export const ListItemButton: TListItemButton = ({
   const theme = useTheme();
   if (!theme) return null;
 
-  const sx = theme.components.list.itemButton;
-  const className = css(sx);
+  const sx = theme.components.list.default.itemButton;
 
   return (
-    <li className={className} {...props}>
+    <li className={css(sx)} {...props}>
       {children}
     </li>
   );

@@ -1,8 +1,12 @@
-import type { CSSObject } from '@emotion/css/create-instance';
+import type { TComponent } from '../system/component';
 
-export type TAppBarSX = CSSObject;
+export type TAppBarVariant = 'default';
 
-export type AppBarProps = {
+export type TAppBarStructureElement = 'root';
+
+export type TAppBar = TComponent<TAppBarVariant, TAppBarStructureElement>;
+
+export type TAppBarProps = {
   width?: number | string;
   position?: 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative';
   color?: string;

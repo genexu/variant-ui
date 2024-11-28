@@ -15,11 +15,10 @@ export const ListItem: TListItem = ({
   const theme = useTheme();
   if (!theme) return null;
 
-  const sx = theme.components.list.item;
-  const className = css(sx);
+  const sx = theme.components.list.default.item;
 
   return (
-    <li className={className} {...props}>
+    <li className={css(sx)} {...props}>
       {children}
     </li>
   );

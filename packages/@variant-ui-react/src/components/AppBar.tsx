@@ -3,9 +3,9 @@ import { css } from '@emotion/css';
 import { Container } from './Container';
 import { Paper } from './Paper';
 import { useTheme } from '../hooks/useTheme';
-import type { AppBarProps } from '@variant-ui/styled-system';
+import type { TAppBarProps } from '@variant-ui/styled-system';
 
-type TAppBarComponentProps = HTMLAttributes<HTMLHeadElement> & AppBarProps;
+type TAppBarComponentProps = HTMLAttributes<HTMLHeadElement> & TAppBarProps;
 
 type TAppBar = FC<TAppBarComponentProps>;
 
@@ -21,12 +21,11 @@ export const AppBar: TAppBar = ({
   if (!theme) return null;
 
   const backgroundColor = bgColor || theme.colors.primary;
-  const sx = theme.components.appbar;
-  const className = css(sx);
+  const sx = theme.components.appbar.default;
 
   return (
     <Paper
-      className={className}
+      className={css(sx)}
       {...props}
       as="header"
       color={color}

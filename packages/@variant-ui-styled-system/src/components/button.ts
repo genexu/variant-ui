@@ -1,14 +1,14 @@
+import type { TComponent } from '../system/component';
+
 export type TButtonVariant =
   | 'text'
   | 'outlined'
   | 'contained-floating'
   | 'contained';
 
-export type TButtonSx = string;
+export type TButtonStructureElement = 'root';
 
-export type TButton = {
-  [key in TButtonVariant]: TButtonSx;
-};
+export type TButton = TComponent<TButtonVariant, TButtonStructureElement>;
 
 export type TButtonProps = {
   variant?: TButtonVariant;

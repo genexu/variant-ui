@@ -12,11 +12,10 @@ export const List: TList = ({ children, ...props }: TListComponentProps) => {
   const theme = useTheme();
   if (!theme) return null;
 
-  const sx = theme.components.list.root;
-  const className = css(sx);
+  const sx = theme.components.list.default.root;
 
   return (
-    <ul className={className} {...props}>
+    <ul className={css(sx)} {...props}>
       {children}
     </ul>
   );

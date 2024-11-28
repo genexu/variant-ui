@@ -1,11 +1,7 @@
-import type { CSSObject } from '@emotion/css/create-instance';
+import { TComponent } from '../system/component';
 
-export type TListSX = CSSObject;
-export type TListItemSX = CSSObject;
-export type TListItemButtonSX = CSSObject;
+export type TListVariant = 'default';
 
-export type TListSXes = {
-  root: TListSX;
-  item: TListItemSX;
-  itemButton: TListItemButtonSX;
-};
+export type TListStructureElement = 'root' | 'item' | 'itemButton';
+
+export type TList = TComponent<TListVariant, TListStructureElement>;
