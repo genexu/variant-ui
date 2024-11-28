@@ -27,6 +27,7 @@ export const Box: TBox = styled('div', {
   if (props.flex) properies.flex = props.flex;
   if (props.flexFlow) properies.flexFlow = props.flexFlow;
   if (props.flexDirection) properies.flexDirection = props.flexDirection;
+  if (props.gap) properies.gap = props.gap;
   if (props.alignItems) properies.alignItems = props.alignItems;
   if (props.justifyContent) properies.justifyContent = props.justifyContent;
 

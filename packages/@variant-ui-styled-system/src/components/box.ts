@@ -8,6 +8,7 @@ export type TBoxProps = {
   flex?: number;
   flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   flexFlow?: string;
+  gap?: number | string;
   alignItems?: string;
   justifyContent?: string;
   width?: number | string;
