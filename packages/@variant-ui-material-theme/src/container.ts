@@ -1,8 +1,7 @@
-import { css } from '@emotion/css';
 import { mq } from './mq';
 import { TContainer } from '@variant-ui/styled-system';
 
-const defaultContainer = {
+const defaultContainerSx = {
   width: '100%',
   padding: '0 24px',
   'box-sizing': 'border-box',
@@ -12,6 +11,10 @@ const defaultContainer = {
 };
 
 export const container: TContainer = {
-  fluid: css(defaultContainer),
-  fixed: css(defaultContainer),
+  fluid: {
+    root: defaultContainerSx,
+  },
+  fixed: {
+    root: defaultContainerSx,
+  },
 };

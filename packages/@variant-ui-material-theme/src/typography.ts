@@ -1,43 +1,64 @@
-import { css } from '@emotion/css';
-import { createTypography } from '@variant-ui/styled-system';
-import type {
-  TTypographyVariant,
-  TTypographySx,
-} from '@variant-ui/styled-system';
+import type { CSSObject } from '@emotion/css/create-instance';
+import type { TTypography } from '@variant-ui/styled-system';
 
 const fontWeightMedium = 500;
 const fontWeightRegular = 400;
 const fontWeightLight = 300;
 
-export const typography: Record<TTypographyVariant, TTypographySx> = {
-  h1: css(
-    createTypography('6rem', '1.167', fontWeightLight, 'normal', '0.35em'),
-  ),
-  h2: css(
-    createTypography('3.75rem', '1.2', fontWeightLight, 'normal', '0.35em'),
-  ),
-  h3: css(
-    createTypography('3rem', '1.167', fontWeightRegular, 'normal', '0.35em'),
-  ),
-  h4: css(
-    createTypography(
-      '2.125rem',
-      '1.235',
-      fontWeightRegular,
-      'normal',
-      '0.35em',
-    ),
-  ),
-  h5: css(
-    createTypography('1.5rem', '1.334', fontWeightRegular, 'normal', '0.35em'),
-  ),
-  h6: css(
-    createTypography('1.25rem', '1.6', fontWeightMedium, 'normal', '0.35em'),
-  ),
-  p: css(
-    createTypography('1rem', '1.5', fontWeightRegular, 'normal', '0.35em'),
-  ),
-  span: css(
-    createTypography('1rem', '1.5', fontWeightRegular, 'normal', '0.35em'),
-  ),
+const defaultTypographySx: CSSObject = {
+  fontSize: '1rem',
+  lineHeight: '1.5',
+  fontWeight: fontWeightRegular,
+  fontStyle: 'normal',
+  marginBottom: '0.35em',
+};
+
+export const typography: TTypography = {
+  h1: {
+    root: {
+      ...defaultTypographySx,
+      fontSize: '6rem',
+      lineHeight: '1.167',
+      fontWeight: fontWeightLight,
+    },
+  },
+  h2: {
+    root: {
+      ...defaultTypographySx,
+      fontSize: '3.75rem',
+      lineHeight: '1.2',
+      fontWeight: fontWeightLight,
+    },
+  },
+  h3: {
+    root: {
+      ...defaultTypographySx,
+      fontSize: '3rem',
+      lineHeight: '1.167',
+    },
+  },
+  h4: {
+    root: {
+      ...defaultTypographySx,
+      fontSize: '2.125rem',
+      lineHeight: '1.235',
+    },
+  },
+  h5: {
+    root: {
+      ...defaultTypographySx,
+      fontSize: '1.5rem',
+      lineHeight: '1.334',
+    },
+  },
+  h6: {
+    root: {
+      ...defaultTypographySx,
+      fontSize: '1.25rem',
+      lineHeight: '1.6',
+      fontWeight: fontWeightMedium,
+    },
+  },
+  p: { root: defaultTypographySx },
+  span: { root: defaultTypographySx },
 };

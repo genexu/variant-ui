@@ -27,19 +27,3 @@ export type TTypographyProps = {
   fontStyle?: TFontStyle;
   gutterBottom?: boolean;
 };
-
-export function createTypography(
-  fontSize: string,
-  lineHeight: string,
-  fontWeight: TFontWeight,
-  fontStyle: TFontStyle,
-  marginButtom: string = '0px',
-) {
-  return `
-    font-size: ${fontSize};
-    line-height: ${lineHeight};
-    font-weight: ${fontWeight};
-    font-style: ${fontStyle};
-    margin-bottom: ${marginButtom};
-  `;
-}

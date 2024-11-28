@@ -1,11 +1,7 @@
-import {
-  TListSX,
-  TListItemSX,
-  TListItemButtonSX,
-  TListSXes,
-} from '@variant-ui/styled-system';
+import { CSSObject } from '@emotion/css/create-instance';
+import { TList } from '@variant-ui/styled-system';
 
-const listSX: TListSX = {
+const listSX: CSSObject = {
   listStyle: 'none',
   margin: 0,
   padding: 0,
@@ -14,14 +10,14 @@ const listSX: TListSX = {
   paddingBottom: 8,
 };
 
-const listItemSX: TListItemSX = {
+const listItemSX: CSSObject = {
   paddingLeft: 16,
   paddingRight: 16,
   paddingTop: 8,
   paddingBottom: 8,
 };
 
-let listItemButtonSX: TListItemButtonSX = structuredClone(listItemSX);
+let listItemButtonSX: CSSObject = structuredClone(listItemSX);
 listItemButtonSX = Object.assign(listItemButtonSX, {
   cursor: 'pointer',
   '&:hover': {
@@ -29,8 +25,10 @@ listItemButtonSX = Object.assign(listItemButtonSX, {
   },
 });
 
-export const list: TListSXes = {
-  root: listSX,
-  item: listItemSX,
-  itemButton: listItemButtonSX,
+export const list: TList = {
+  default: {
+    root: listSX,
+    item: listItemSX,
+    itemButton: listItemButtonSX,
+  },
 };

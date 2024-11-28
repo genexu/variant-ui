@@ -1,11 +1,11 @@
-import { css } from '@emotion/css';
 import { colors, palette } from './color';
 import type {
-  TTextFieldVariant,
-  TTextFieldSx,
+  TTextField,
+  TTextFieldStructureElement,
 } from '@variant-ui/styled-system';
+import type { CSSObject } from '@emotion/css/create-instance';
 
-const defaultFormControlSx = {
+const defaultFormControlSx: CSSObject = {
   position: 'relative',
   paddingTop: '20px',
   marginBottom: '8px',
@@ -62,7 +62,7 @@ const defaultFormControlSx = {
   },
 } as const;
 
-const defaultFormControlLabelSx = {
+const defaultFormControlLabelSx: CSSObject = {
   position: 'absolute',
   top: 0,
   left: 0,
@@ -72,7 +72,7 @@ const defaultFormControlLabelSx = {
     'color 200ms cubic-bezier(0, 0, 0.2, 1), transform 200ms cubic-bezier(0, 0, 0.2, 1)',
 } as const;
 
-const defaultFormControlInputSx = {
+const defaultFormControlInputSx: CSSObject = {
   display: 'flex',
   width: '100%',
   padding: '4px 0px 5px',
@@ -85,13 +85,13 @@ const defaultFormControlInputSx = {
   },
 } as const;
 
-const defaultTextFieldSx: TTextFieldSx = {
-  formControl: css(defaultFormControlSx),
-  formControl_label: css(defaultFormControlLabelSx),
-  formControl_input: css(defaultFormControlInputSx),
+const defaultTextFieldSx: Record<TTextFieldStructureElement, CSSObject> = {
+  root: defaultFormControlSx,
+  formControl_label: defaultFormControlLabelSx,
+  formControl_input: defaultFormControlInputSx,
 };
 
-export const textfield: Record<TTextFieldVariant, TTextFieldSx> = {
+export const textfield: TTextField = {
   default: defaultTextFieldSx,
   outlined: defaultTextFieldSx,
   'outlined-floating': defaultTextFieldSx,
