@@ -1,4 +1,4 @@
-import { colors, palette } from './color';
+import { colors, palette } from '../color';
 import type {
   TTextField,
   TTextFieldStructureElement,

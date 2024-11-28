@@ -1,5 +1,5 @@
-import { mq } from './mq';
-import { TContainer } from '@variant-ui/styled-system';
+import { mq } from '../mq';
+import type { TContainer } from '@variant-ui/styled-system';
 
 const defaultContainer = {
   width: '100%',

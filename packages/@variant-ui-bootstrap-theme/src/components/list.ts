@@ -1,6 +1,6 @@
-import { CSSObject } from '@emotion/css/create-instance';
-import { colors } from './color';
-import { TList } from '@variant-ui/styled-system';
+import { colors } from '../color';
+import type { CSSObject } from '@emotion/css/create-instance';
+import type { TList } from '@variant-ui/styled-system';
 
 const listSX: CSSObject = {
   listStyle: 'none',

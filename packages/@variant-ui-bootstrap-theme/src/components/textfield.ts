@@ -1,9 +1,9 @@
-import { colors, palette } from './color';
+import { colors, palette } from '../color';
+import type { CSSObject } from '@emotion/css/create-instance';
 import type {
   TTextField,
   TTextFieldStructureElement,
 } from '@variant-ui/styled-system';
-import type { CSSObject } from '@emotion/css/create-instance';
 
 const defaultFormControlSx = {
   marginBottom: '8px',

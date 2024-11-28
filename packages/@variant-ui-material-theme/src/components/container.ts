@@ -1,4 +1,4 @@
-import { mq } from './mq';
+import { mq } from '../mq';
 import { TContainer } from '@variant-ui/styled-system';
 
 const defaultContainerSx = {

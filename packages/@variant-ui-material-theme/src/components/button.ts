@@ -1,17 +1,22 @@
-import { css } from '@emotion/css';
-import { colors, palette } from './color';
+import { colors, palette } from '../color';
+import { shadows } from '../shadows';
 import type { CSSObject } from '@emotion/css/create-instance';
 import type { TButton } from '@variant-ui/styled-system';
 
 const defaultButtonSx: CSSObject = {
-  display: 'inline-block',
   cursor: 'pointer',
-  padding: '0.375rem 0.75rem',
-  lineHeight: 1.5,
-  border: `1px solid ${colors.primary}`,
-  borderRadius: '0.375rem',
+  border: 'none',
+  borderRadius: 4,
+  display: 'inline-flex',
+  minWidth: 64,
+  alignItems: 'center',
+  justifyContent: 'center',
+  lineHeight: 1.75,
+  letterSpacing: '0.02857em',
+  padding: '6px 16px',
+  textTransform: 'uppercase',
   transition:
-    'color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out',
+    'background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1)',
 };
 
 let textButtonSx: CSSObject = structuredClone(defaultButtonSx);
@@ -36,6 +41,7 @@ let containerdFloatingButtonSx: CSSObject = structuredClone(containedButtonSx);
 containerdFloatingButtonSx = Object.assign(containerdFloatingButtonSx, {
   '&:hover': {
     backgroundColor: palette.blue[600],
+    boxShadow: shadows[4],
   },
 });
 
