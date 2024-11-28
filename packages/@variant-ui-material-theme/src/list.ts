@@ -21,7 +21,8 @@ const listItemSX: TListItemSX = {
   paddingBottom: 8,
 };
 
-const listItemButtonSX: TListItemButtonSX = Object.assign({}, listItemSX, {
+let listItemButtonSX: TListItemButtonSX = structuredClone(listItemSX);
+listItemButtonSX = Object.assign(listItemButtonSX, {
   cursor: 'pointer',
   '&:hover': {
     backgroundColor: 'rgba(0, 0, 0, 0.04)',

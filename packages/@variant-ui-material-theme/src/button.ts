@@ -20,7 +20,8 @@ const defaultButtonSx: CSSObject = {
     'background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1)',
 };
 
-const textButtonSx = Object.assign({}, defaultButtonSx, {
+let textButtonSx: CSSObject = structuredClone(defaultButtonSx);
+textButtonSx = Object.assign(textButtonSx, {
   color: colors.primary,
   backgroundColor: 'transparent',
   '&:hover': {
@@ -28,7 +29,8 @@ const textButtonSx = Object.assign({}, defaultButtonSx, {
   },
 });
 
-const containedButtonSx = Object.assign({}, defaultButtonSx, {
+let containedButtonSx: CSSObject = structuredClone(defaultButtonSx);
+containedButtonSx = Object.assign(containedButtonSx, {
   color: colors.white,
   backgroundColor: colors.primary,
   '&:hover': {
@@ -36,14 +38,16 @@ const containedButtonSx = Object.assign({}, defaultButtonSx, {
   },
 });
 
-const containerdFloatingButtonSx = Object.assign({}, containedButtonSx, {
+let containerdFloatingButtonSx: CSSObject = structuredClone(containedButtonSx);
+containerdFloatingButtonSx = Object.assign(containerdFloatingButtonSx, {
   '&:hover': {
     backgroundColor: palette.blue[600],
     boxShadow: shadows[4],
   },
 });
 
-const outlinedButtonSx = Object.assign({}, defaultButtonSx, {
+let outlinedButtonSx: CSSObject = structuredClone(defaultButtonSx);
+outlinedButtonSx = Object.assign(outlinedButtonSx, {
   color: colors.primary,
   backgroundColor: 'transparent',
   border: `1px solid ${colors.primary}`,

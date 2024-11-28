@@ -18,7 +18,8 @@ const listItemSX: TListItemSX = {
   color: '#212529',
 };
 
-const listItemButtonSX: TListItemButtonSX = Object.assign({}, listItemSX, {
+let listItemButtonSX: TListItemButtonSX = structuredClone(listItemSX);
+listItemButtonSX = Object.assign(listItemButtonSX, {
   cursor: 'pointer',
   '&:hover': {
     color: colors.black,
