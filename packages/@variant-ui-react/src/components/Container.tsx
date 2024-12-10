@@ -15,7 +15,7 @@ export const Container: TContainer = ({
   const theme = useTheme();
   if (!theme) return null;
 
-  const sx = theme.components.container[variant].root;
+  const sx = theme.components.container[variant]?.root;
 
   return <div className={css(sx)}>{children}</div>;
 };

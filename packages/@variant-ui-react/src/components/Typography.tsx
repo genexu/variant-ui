@@ -42,7 +42,7 @@ export const Typography: TTypographyComponent = ({
   const theme = useTheme();
   if (!theme) return null;
 
-  const sx = theme.components.typography[variant].root;
+  const sx = theme.components.typography[variant]?.root;
 
   return (
     <TypographyBase as={variant} className={css(sx)} color={color} {...props}>

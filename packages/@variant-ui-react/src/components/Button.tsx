@@ -16,7 +16,7 @@ export const Button: TButton = ({
   if (!theme) return null;
 
   const elevation = variant === 'contained-floating' ? 2 : 0;
-  const sx = theme.components.button[variant].root;
+  const sx = theme.components.button[variant]?.root;
 
   return (
     <Paper as="button" className={css(sx)} elevation={elevation}>

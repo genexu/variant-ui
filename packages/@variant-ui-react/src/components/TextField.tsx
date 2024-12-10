@@ -23,17 +23,17 @@ export const TextField: TTextField = ({
 
   const sx = theme.components.textfield[variant];
 
-  const rootClassNames = [css(sx.root)];
+  const rootClassNames = [css(sx?.root)];
   if (error) rootClassNames.push('error');
 
   return (
     <div className={cx(...rootClassNames)}>
       {label && (
-        <label htmlFor={id} className={css(sx.formControl_label)}>
+        <label htmlFor={id} className={css(sx?.formControl_label)}>
           {label}
         </label>
       )}
-      <input id={id} className={css(sx.formControl_input)} {...props} />
+      <input id={id} className={css(sx?.formControl_input)} {...props} />
     </div>
   );
 };

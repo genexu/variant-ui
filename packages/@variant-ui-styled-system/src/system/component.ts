@@ -12,8 +12,8 @@ export type TComponent<
   TVariant extends string,
   TStructureElement extends string,
 > = {
-  [key in TVariant]: {
-    [key in TStructureElement]: CSSObject;
+  [key in TVariant]?: {
+    [key in TStructureElement]?: CSSObject;
   };
 };
 
