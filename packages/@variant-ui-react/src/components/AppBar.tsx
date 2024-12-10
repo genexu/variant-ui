@@ -1,11 +1,11 @@
-import { FC, HTMLAttributes } from 'react';
+import { FC, HTMLProps } from 'react';
 import { css } from '@emotion/css';
 import { Container } from './Container';
 import { Paper } from './Paper';
 import { useTheme } from '../hooks/useTheme';
 import type { TAppBarProps } from '@variant-ui/styled-system';
 
-type TAppBarComponentProps = HTMLAttributes<HTMLHeadElement> & TAppBarProps;
+type TAppBarComponentProps = HTMLProps<HTMLHeadElement> & TAppBarProps;
 
 type TAppBar = FC<TAppBarComponentProps>;
 
@@ -25,11 +25,11 @@ export const AppBar: TAppBar = ({
 
   return (
     <Paper
+      as="header"
       className={css(sx)}
       {...props}
-      as="header"
       color={color}
-      bgColor={backgroundColor}
+      backgroundColor={backgroundColor}
       position={position}
       elevation={elevation}
       minHeight={48}

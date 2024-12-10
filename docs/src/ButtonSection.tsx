@@ -11,6 +11,7 @@ const ButtonSection = () => {
         padding={24}
         borderWidth={1}
         borderRadius={4}
+        borderStyle="solid"
         borderColor="#DFDFDF"
       >
         <Box margin="0 12px 0 0">

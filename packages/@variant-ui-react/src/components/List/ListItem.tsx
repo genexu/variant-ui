@@ -15,7 +15,7 @@ export const ListItem: TListItem = ({
   const theme = useTheme();
   if (!theme) return null;
 
-  const sx = theme.components.list.default.item;
+  const sx = theme.components.list?.default?.item;
 
   return (
     <li className={css(sx)} {...props}>

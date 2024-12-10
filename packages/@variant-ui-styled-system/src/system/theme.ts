@@ -41,6 +41,7 @@ export const createTheme = (themeBase: TThemeBase): TTheme => {
     button: themeBase.components.button,
     container: themeBase.components.container,
     list: themeBase.components.list,
+    menu: themeBase.components.menu,
     typography: themeBase.components.typography,
     textfield: themeBase.components.textfield,
   };

@@ -9,14 +9,14 @@ type TColorBlock = {
 };
 
 const ColorBlock = ({ w, h, color, name }: TColorBlock) => {
-  if (!name) return <Box width={w} height={h} bgColor={color} />;
+  if (!name) return <Box width={w} height={h} backgroundColor={color} />;
 
   return (
     <Box>
       <Typography variant="p" gutterBottom>
         {name}
       </Typography>
-      <Box width={w} height={h} bgColor={color} />
+      <Box width={w} height={h} backgroundColor={color} />
     </Box>
   );
 };

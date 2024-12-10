@@ -1,22 +1,27 @@
-import { FC, OlHTMLAttributes, ReactNode } from 'react';
+import { forwardRef } from 'react';
 import { css } from '@emotion/css';
 import { useTheme } from '../../hooks/useTheme';
+import type { FC, HTMLProps, OlHTMLAttributes } from 'react';
 
-export type TListComponentProps = OlHTMLAttributes<HTMLOListElement> & {
-  children: ReactNode;
-};
-
+export type TListComponentProps = OlHTMLAttributes<HTMLUListElement> &
+  HTMLProps<HTMLUListElement>;
 export type TList = FC<TListComponentProps>;
 
-export const List: TList = ({ children, ...props }: TListComponentProps) => {
-  const theme = useTheme();
-  if (!theme) return null;
+const List: TList = forwardRef<HTMLUListElement, TListComponentProps>(
+  ({ children, ...props }, ref) => {
+    const theme = useTheme();
+    if (!theme) return null;
 
-  const sx = theme.components.list.default.root;
+    const sx = theme.components.list?.default?.root;
 
-  return (
-    <ul className={css(sx)} {...props}>
-      {children}
-    </ul>
-  );
-};
+    return (
+      <ul ref={ref} className={css(sx)} {...props}>
+        {children}
+      </ul>
+    );
+  },
+);
+
+List.displayName = 'List';
+
+export { List };

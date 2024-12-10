@@ -16,6 +16,7 @@ import ColorSection from './ColorSection';
 import TextFieldSection from './TextFieldSection';
 import PaperSection from './PaperSection';
 import ButtonSection from './ButtonSection';
+import MenuSection from './MenuSection';
 import type { TTheme } from '@variant-ui/styled-system';
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
           position="fixed"
           height="100vh"
           width="240px"
+          borderStyle="solid"
           borderWidth="0 1px 0 0"
           borderColor="#DFDFDF"
           style={{ zIndex: 9999 }}
@@ -107,6 +109,9 @@ const App = () => {
           </AppBar>
           <Container>
             <Box padding="48px 0 0 0" /> {/* The baseline for AppBar */}
+            <Box padding="12px 0">
+              <MenuSection />
+            </Box>
             <Box padding="12px 0">
               <ButtonSection />
             </Box>

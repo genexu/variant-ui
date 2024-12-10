@@ -6,3 +6,4 @@ export { Paper } from './Paper';
 export { Typography } from './Typography';
 export { TextField } from './TextField';
 export { List, ListItem, ListItemButton } from './List';
+export { Menu } from './Menu';

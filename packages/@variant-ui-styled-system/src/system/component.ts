@@ -4,6 +4,7 @@ import {
   TButton,
   TContainer,
   TList,
+  TMenu,
   TTextField,
   TTypography,
 } from '../components';
@@ -22,6 +23,7 @@ export type TComponents = {
   button: TButton;
   container: TContainer;
   list: TList;
+  menu: TMenu;
   textfield: TTextField;
   typography: TTypography;
 };

@@ -21,6 +21,7 @@ const PaperSection = () => {
             width={100}
             height={60}
             padding={6}
+            borderStyle="solid"
             borderWidth={1}
             borderColor={borderColor}
           >
