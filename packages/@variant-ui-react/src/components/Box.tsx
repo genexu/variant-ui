@@ -21,7 +21,7 @@ const StyledBox = styled('div', {
 
   Object.entries(props).forEach(([key, value]) => {
     // filter non-css props
-    if (['theme', 'children'].includes(key)) return;
+    if (['theme', 'children', 'as', 'className'].includes(key)) return;
     properies[key] = value;
   });
 
