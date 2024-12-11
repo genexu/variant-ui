@@ -9,6 +9,7 @@ import {
   List,
   ListItem,
   ListItemButton,
+  Divider,
 } from '@variant-ui/react';
 import materialTheme from '@variant-ui/material-theme';
 import bootstrapTheme from '@variant-ui/bootstrap-theme';
@@ -46,10 +47,7 @@ const App = () => {
               Variant UI
             </Typography>
           </Box>
-          <div
-            id="divider"
-            style={{ height: '1px', backgroundColor: '#DFDFDF' }}
-          />
+          <Divider marginTop={0} />
           <List>
             <ListItemButton>Overview</ListItemButton>
             <ListItemButton>Getting Started</ListItemButton>
@@ -58,10 +56,7 @@ const App = () => {
             <ListItemButton>Support</ListItemButton>
             <ListItemButton>FAQs</ListItemButton>
           </List>
-          <div
-            id="divider"
-            style={{ height: '1px', backgroundColor: '#DFDFDF' }}
-          />
+          <Divider />
           <List>
             <ListItem>
               <Typography fontSize="14px" fontWeight={600}>
@@ -73,10 +68,7 @@ const App = () => {
             <ListItemButton>Container</ListItemButton>
             <ListItemButton>Stack</ListItemButton>
           </List>
-          <div
-            id="divider"
-            style={{ height: '1px', backgroundColor: '#DFDFDF' }}
-          />
+          <Divider />
           <List>
             <ListItem>
               <Typography fontSize="14px" fontWeight={600}>

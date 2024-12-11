@@ -1,6 +1,7 @@
 export * from './appbar';
 export * from './button';
 export * from './container';
+export * from './divider';
 export * from './list';
 export * from './menu';
 export * from './paper';

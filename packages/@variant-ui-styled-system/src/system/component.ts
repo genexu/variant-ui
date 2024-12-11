@@ -3,6 +3,7 @@ import {
   TAppBar,
   TButton,
   TContainer,
+  TDivider,
   TList,
   TMenu,
   TTextField,
@@ -22,6 +23,7 @@ export type TComponents = {
   appbar: TAppBar;
   button: TButton;
   container: TContainer;
+  divider: TDivider;
   list: TList;
   menu: TMenu;
   textfield: TTextField;

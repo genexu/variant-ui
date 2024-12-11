@@ -3,6 +3,7 @@ import { button } from './button';
 import { typography } from './typography';
 import { textfield } from './textfield';
 import { container } from './container';
+import { divider } from './divider';
 import { list } from './list';
 import { menu } from './menu';
 import type { TComponents } from '@variant-ui/styled-system';
@@ -13,6 +14,7 @@ export const components: TComponents = {
   typography,
   textfield,
   container,
+  divider,
   list,
   menu,
 };

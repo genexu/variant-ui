@@ -40,6 +40,7 @@ export const createTheme = (themeBase: TThemeBase): TTheme => {
     appbar: themeBase.components.appbar,
     button: themeBase.components.button,
     container: themeBase.components.container,
+    divider: themeBase.components.divider,
     list: themeBase.components.list,
     menu: themeBase.components.menu,
     typography: themeBase.components.typography,
