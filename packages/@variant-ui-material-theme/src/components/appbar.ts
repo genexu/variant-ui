@@ -3,7 +3,9 @@ import { zIndex } from '../zindex';
 import { CSSObject } from '@emotion/css/create-instance';
 
 const sx: CSSObject = {
-  zIndex: zIndex.appbar,
+  '&.fixed': {
+    zIndex: zIndex.appbar,
+  },
 };
 
 export const appbar: TAppBar = {

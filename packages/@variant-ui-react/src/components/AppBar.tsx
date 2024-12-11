@@ -1,5 +1,5 @@
 import { FC, HTMLProps } from 'react';
-import { css } from '@emotion/css';
+import { css, cx } from '@emotion/css';
 import { Container } from './Container';
 import { Paper } from './Paper';
 import { useTheme } from '../hooks/useTheme';
@@ -21,12 +21,12 @@ export const AppBar: TAppBar = ({
   if (!theme) return null;
 
   const backgroundColor = bgColor || theme.colors.primary;
-  const sx = theme.components.appbar.default;
+  const sx = theme.components.appbar?.default?.root;
 
   return (
     <Paper
       as="header"
-      className={css(sx)}
+      className={cx(css(sx), position)}
       {...props}
       color={color}
       backgroundColor={backgroundColor}
